@@ -1,3 +1,6 @@
+Got you 😎 — **you don't need to add anything yourself.** Here's the complete version with **“Produced by Rehan” already built in**, in a cursive signature style.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +9,23 @@
 
 <title>Biryani Fans Hub | Premium Dum Biryani</title>
 
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <!-- Three.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --gold: #f5b942;
-    --gold2: #ffda75;
-    --orange: #e87518;
-    --dark: #070604;
-    --dark2: #110c07;
-    --cream: #fff4d6;
+    --gold: #ffc857;
+    --gold-light: #ffe6a6;
+    --orange: #e87d20;
+    --dark: #080604;
+    --card: #15100a;
 }
 
 * {
@@ -32,85 +39,157 @@ html {
 }
 
 body {
+    font-family: 'Poppins', Arial, sans-serif;
+
     background:
-        radial-gradient(circle at 70% 10%, rgba(245,185,66,.12), transparent 25%),
-        radial-gradient(circle at 10% 50%, rgba(232,117,24,.08), transparent 25%),
-        #070604;
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255,160,40,.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(255,100,0,.07),
+            transparent 25%
+        ),
+        #080604;
+
     color: white;
-    font-family: Poppins, sans-serif;
     overflow-x: hidden;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
+/* ==========================================
+   PRODUCED BY REHAN
+========================================== */
 
-.background-glow {
+.produced-by {
     position: fixed;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(245,185,66,.09), transparent 70%);
+
+    top: 92px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 999;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 1.25rem;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.6);
+
+    text-shadow:
+        0 0 15px rgba(255,200,87,.15);
+
     pointer-events: none;
+
+    white-space: nowrap;
+}
+
+.produced-by span {
+    color: var(--gold);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 12px rgba(255,200,87,.25);
+}
+
+/* ==========================================
+   BACKGROUND PARTICLE EFFECT
+========================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            rgba(255,200,87,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
     z-index: -1;
 }
 
-.glow1 {
-    top: -250px;
-    right: -150px;
-}
-
-.glow2 {
-    bottom: -250px;
-    left: -150px;
-}
-
-/* =========================
+/* ==========================================
    NAVBAR
-========================= */
+========================================== */
 
 nav {
     position: fixed;
+
     top: 20px;
+
     left: 50%;
+
     transform: translateX(-50%);
-    width: min(1100px, 92%);
-    padding: 15px 25px;
+
+    width: min(1150px, 92%);
+
+    padding: 14px 25px;
 
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
 
-    background: rgba(15, 12, 8, .65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    align-items: center;
 
-    border: 1px solid rgba(255,255,255,.08);
+    background:
+        rgba(18,12,7,.72);
+
+    backdrop-filter: blur(20px);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
     border-radius: 50px;
 
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.4),
-        inset 0 1px rgba(255,255,255,.08);
-
     z-index: 1000;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.35);
 }
 
 .logo {
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
+
     font-size: 1.3rem;
-    font-weight: 700;
+
     color: var(--gold);
+
+    font-weight: 700;
 }
 
 .nav-links {
     display: flex;
+
     gap: 30px;
 }
 
 .nav-links a {
-    color: #ddd;
+    color: #ccc;
+
     text-decoration: none;
+
     font-size: .9rem;
+
     transition: .3s;
 }
 
@@ -118,285 +197,438 @@ nav {
     color: var(--gold);
 }
 
-.nav-btn {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #ffda75, #e99b21);
-    color: #120d05;
+.order-btn {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe59a,
+            #e89120
+        );
+
+    color: #180d04;
+
+    padding: 11px 22px;
+
     border-radius: 30px;
-    font-weight: 700;
+
+    font-weight: bold;
+
     text-decoration: none;
-    font-size: .85rem;
-    box-shadow: 0 8px 30px rgba(245,185,66,.2);
+
+    box-shadow:
+        0 8px 25px rgba(240,145,30,.18);
 }
 
-/* =========================
+/* ==========================================
    HERO
-========================= */
+========================================== */
 
 .hero {
     min-height: 100vh;
+
     position: relative;
+
     display: flex;
+
     align-items: center;
-    padding: 120px 7% 70px;
+
+    padding:
+        140px 7% 70px;
+
     overflow: hidden;
 }
 
 .hero-content {
-    width: 52%;
+    width: 50%;
+
     position: relative;
+
     z-index: 5;
 }
 
-.small-label {
+.label {
     color: var(--gold);
+
+    font-size: .72rem;
+
     letter-spacing: 4px;
-    font-size: .75rem;
+
     text-transform: uppercase;
+
     margin-bottom: 20px;
-    display: inline-block;
 }
 
 .hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(4rem, 7vw, 7.5rem);
-    line-height: .9;
-    margin-bottom: 30px;
-    letter-spacing: -3px;
+    font-family: 'Playfair Display', serif;
+
+    font-size:
+        clamp(4.2rem, 7vw, 8rem);
+
+    line-height: .88;
+
+    letter-spacing: -4px;
 }
 
 .hero h1 span {
-    background: linear-gradient(
-        120deg,
-        #fff1ad,
-        #f5b942,
-        #fff1ad,
-        #d98b17
-    );
+    color: var(--gold);
 
-    background-size: 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    animation: goldMove 6s ease infinite;
-}
-
-@keyframes goldMove {
-    0%,100% { background-position: 0%; }
-    50% { background-position: 100%; }
+    text-shadow:
+        0 0 40px
+        rgba(255,190,70,.18);
 }
 
 .hero p {
-    max-width: 600px;
-    color: #bcb8ae;
-    font-size: 1.05rem;
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    color: #aaa39a;
+
     line-height: 1.9;
-    margin-bottom: 35px;
 }
 
 .hero-buttons {
+    margin-top: 35px;
+
     display: flex;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
-.primary-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
+.primary {
     padding: 16px 28px;
-    border-radius: 50px;
 
-    color: #110c04;
-    background: linear-gradient(135deg, #ffe28a, #e99b21);
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe89d,
+            #e99422
+        );
+
+    color: #1a0d04;
 
     text-decoration: none;
+
     font-weight: 700;
 
     box-shadow:
-        0 10px 40px rgba(245,185,66,.25),
-        inset 0 1px rgba(255,255,255,.6);
+        0 15px 45px
+        rgba(240,145,30,.25);
 
     transition: .3s;
 }
 
-.primary-btn:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(245,185,66,.35);
+.primary:hover {
+    transform:
+        translateY(-5px)
+        scale(1.02);
 }
 
-.secondary-btn {
-    display: inline-flex;
-    align-items: center;
-
+.secondary {
     padding: 16px 28px;
-    border-radius: 50px;
+
+    border-radius: 40px;
 
     color: white;
-    border: 1px solid rgba(255,255,255,.15);
 
     text-decoration: none;
-    font-weight: 500;
 
-    background: rgba(255,255,255,.03);
-    backdrop-filter: blur(10px);
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.03);
 
     transition: .3s;
 }
 
-.secondary-btn:hover {
-    background: rgba(255,255,255,.08);
-    transform: translateY(-5px);
+.secondary:hover {
+    background:
+        rgba(255,255,255,.08);
+
+    transform:
+        translateY(-4px);
 }
-
-/* =========================
-   3D CANVAS
-========================= */
-
-#three-container {
-    position: absolute;
-    right: -5%;
-    top: 5%;
-    width: 60%;
-    height: 90%;
-    z-index: 2;
-}
-
-#three-container canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* =========================
-   FLOATING INGREDIENTS
-========================= */
-
-.ingredient {
-    position: absolute;
-    z-index: 4;
-    pointer-events: none;
-
-    filter: drop-shadow(0 15px 15px rgba(0,0,0,.5));
-
-    animation: float 5s ease-in-out infinite;
-}
-
-.mint {
-    width: 35px;
-    height: 18px;
-    border-radius: 100% 0 100% 0;
-    background: linear-gradient(135deg,#8dbb45,#254c1c);
-    transform: rotate(35deg);
-}
-
-.saffron {
-    width: 50px;
-    height: 3px;
-    background: #ef8e19;
-    border-radius: 100%;
-    transform: rotate(-25deg);
-}
-
-.spice {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #b86827, #41170b);
-}
-
-.i1 { top: 25%; right: 9%; animation-delay: 0s; }
-.i2 { top: 65%; right: 20%; animation-delay: 1s; }
-.i3 { top: 20%; right: 32%; animation-delay: 2s; }
-.i4 { top: 75%; right: 40%; animation-delay: 3s; }
-
-@keyframes float {
-    0%,100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-25px) rotate(15deg);
-    }
-}
-
-/* =========================
-   STATS
-========================= */
 
 .stats {
     display: flex;
-    gap: 50px;
+
+    gap: 45px;
+
     margin-top: 50px;
 }
 
 .stat strong {
     display: block;
+
+    font-size: 1.6rem;
+
     color: var(--gold);
-    font-size: 1.7rem;
-    font-family: "Playfair Display", serif;
 }
 
 .stat span {
+    font-size: .7rem;
+
     color: #777;
-    font-size: .75rem;
 }
 
-/* =========================
-   SECTION
-========================= */
+/* ==========================================
+   3D HERO
+========================================== */
 
-section {
-    position: relative;
+#three-container {
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 58%;
+
+    height: 100%;
+
+    z-index: 2;
 }
+
+.hero-glow {
+    position: absolute;
+
+    width: 650px;
+
+    height: 650px;
+
+    right: 1%;
+
+    top: 12%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,170,45,.18),
+            rgba(255,100,0,.05) 40%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   FLOATING INGREDIENTS
+========================================== */
+
+.floating {
+    position: absolute;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 15px 10px
+            rgba(0,0,0,.6)
+        );
+}
+
+.mint {
+    width: 42px;
+
+    height: 23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9ac95d,
+            #254c1d
+        );
+
+    border-radius:
+        100% 0 100% 0;
+}
+
+.onion {
+    width: 32px;
+
+    height: 18px;
+
+    border:
+        5px solid #d58a50;
+
+    border-radius: 50%;
+
+    border-left-color:
+        #ffe0b2;
+
+    transform: rotate(25deg);
+}
+
+.chili {
+    width: 55px;
+
+    height: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7b160b,
+            #d73d18
+        );
+
+    border-radius:
+        100% 20% 100% 20%;
+
+    transform: rotate(-35deg);
+}
+
+.float1 {
+    right: 12%;
+
+    top: 22%;
+
+    animation:
+        floatOne 5s
+        ease-in-out infinite;
+}
+
+.float2 {
+    right: 40%;
+
+    top: 17%;
+
+    animation:
+        floatTwo 6s
+        ease-in-out infinite;
+}
+
+.float3 {
+    right: 7%;
+
+    bottom: 25%;
+
+    animation:
+        floatThree 5.5s
+        ease-in-out infinite;
+}
+
+@keyframes floatOne {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(20deg);
+    }
+
+}
+
+@keyframes floatTwo {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(25deg);
+    }
+
+    50% {
+        transform:
+            translateY(-35px)
+            rotate(-20deg);
+    }
+
+}
+
+@keyframes floatThree {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-35deg);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+    }
+
+}
+
+/* ==========================================
+   SECTIONS
+========================================== */
 
 .section {
-    padding: 120px 7%;
+    padding:
+        120px 7%;
 }
 
-.section-heading {
+.heading {
     text-align: center;
-    margin-bottom: 70px;
+
+    margin-bottom: 65px;
 }
 
-.section-heading .label {
+.heading h2 {
+    font-family:
+        'Playfair Display', serif;
+
+    font-size:
+        clamp(3rem,5vw,5.5rem);
+}
+
+.heading h2 span {
     color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: .7rem;
 }
 
-.section-heading h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(3rem, 5vw, 5rem);
-    margin-top: 15px;
-}
+.heading p {
+    color: #888;
 
-.section-heading p {
-    color: #85817a;
     max-width: 600px;
+
     margin: 15px auto;
 }
 
-/* =========================
-   MENU CARDS
-========================= */
+/* ==========================================
+   MENU
+========================================== */
 
 .menu-grid {
     max-width: 1200px;
+
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 25px;
 }
 
-.menu-card {
-    position: relative;
-    padding: 35px;
+.card {
+    min-height: 430px;
 
-    min-height: 390px;
+    padding: 30px;
+
+    border-radius: 30px;
+
+    position: relative;
+
+    overflow: hidden;
 
     background:
         linear-gradient(
@@ -405,336 +637,286 @@ section {
             rgba(255,255,255,.025)
         );
 
-    border: 1px solid rgba(255,255,255,.09);
-    border-radius: 28px;
-
-    overflow: hidden;
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
     transition:
-        transform .5s cubic-bezier(.2,.8,.2,1),
+        transform .2s ease,
         border .3s;
 
-    transform-style: preserve-3d;
+    transform-style:
+        preserve-3d;
 }
 
-.menu-card:hover {
-    transform: translateY(-15px) rotateX(4deg) rotateY(-4deg);
-    border-color: rgba(245,185,66,.4);
+.card:hover {
+    border-color:
+        rgba(255,200,87,.5);
 
     box-shadow:
-        0 40px 80px rgba(0,0,0,.5),
-        0 0 40px rgba(245,185,66,.07);
+        0 30px 70px
+        rgba(0,0,0,.4);
 }
 
 .card-number {
     position: absolute;
-    right: 25px;
-    top: 20px;
 
-    font-family: "Playfair Display", serif;
-    font-size: 4rem;
-    color: rgba(255,255,255,.035);
+    right: 20px;
+
+    top: 10px;
+
+    font-size: 5rem;
+
+    color:
+        rgba(255,255,255,.035);
+
+    font-family:
+        'Playfair Display', serif;
 }
 
-.food-visual {
-    height: 180px;
+.food-icon {
+    height: 210px;
+
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    transform: translateZ(35px);
+    align-items: center;
+
+    justify-content: center;
 }
 
-/* 3D CSS FOOD */
+.mini-hand {
+    width: 170px;
 
-.bowl {
+    height: 100px;
+
     position: relative;
-    width: 150px;
-    height: 75px;
 
-    border-radius: 0 0 80px 80px;
+    border-radius:
+        25% 25% 50% 50%;
 
     background:
         linear-gradient(
-            160deg,
-            #4d2614,
-            #1b0d07 60%,
-            #542712
+            100deg,
+            #3b1607,
+            #a95416 35%,
+            #5a2109 60%,
+            #180704
         );
 
     box-shadow:
-        inset 0 -10px 20px rgba(0,0,0,.6),
-        0 25px 40px rgba(0,0,0,.6);
+        inset 15px 5px 20px
+        rgba(255,180,80,.2),
 
-    transform: perspective(400px) rotateX(15deg);
+        inset -20px -15px 25px
+        rgba(0,0,0,.6),
+
+        0 30px 35px
+        rgba(0,0,0,.6);
 }
 
-.bowl::before {
+.mini-hand::before {
     content: "";
+
     position: absolute;
 
-    width: 160px;
-    height: 45px;
+    width: 180px;
 
-    top: -15px;
+    height: 55px;
+
     left: -5px;
+
+    top: -20px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
-            circle,
-            #f1d29a 0 12%,
-            #e3bd75 13% 18%,
-            #b8732d 19% 21%,
-            #f4d99b 22% 30%,
-            #b96e28 31% 35%,
-            #f1cd86 36% 100%
+            ellipse at center,
+            #f3d18b 0 35%,
+            #bc702d 36% 42%,
+            #321207 43% 100%
         );
-
-    box-shadow:
-        inset 0 5px 10px rgba(0,0,0,.5),
-        0 8px 15px rgba(0,0,0,.5);
 }
 
-.bowl::after {
-    content: "✦  •  ✦  •  ✦";
+.card h3 {
+    font-family:
+        'Playfair Display', serif;
 
-    position: absolute;
-    top: -5px;
-    left: 15px;
+    font-size: 1.6rem;
 
-    color: #fff1b0;
-    font-size: 15px;
-    letter-spacing: 8px;
+    margin-bottom: 12px;
 }
 
-/* steam */
-
-.steam {
-    position: absolute;
-    width: 4px;
-    height: 55px;
-
-    background: linear-gradient(
-        to top,
-        rgba(255,255,255,.25),
-        transparent
-    );
-
-    filter: blur(3px);
-    border-radius: 50%;
-
-    animation: steam 3s infinite ease-out;
-}
-
-.steam1 { left: 35%; }
-.steam2 { left: 50%; animation-delay: 1s; }
-.steam3 { left: 65%; animation-delay: 1.8s; }
-
-@keyframes steam {
-    0% {
-        transform: translateY(10px) scale(.8);
-        opacity: 0;
-    }
-
-    40% {
-        opacity: .7;
-    }
-
-    100% {
-        transform: translateY(-70px) translateX(20px) scale(1.4);
-        opacity: 0;
-    }
-}
-
-.menu-card h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-    transform: translateZ(20px);
-}
-
-.menu-card p {
+.card p {
     color: #888;
-    font-size: .85rem;
+
+    font-size: .86rem;
+
     line-height: 1.8;
 }
 
 .price {
-    display: inline-block;
-    margin-top: 20px;
+    display: block;
 
     color: var(--gold);
+
+    font-weight: bold;
+
     font-size: 1.2rem;
-    font-weight: 700;
+
+    margin-top: 20px;
 }
 
-/* =========================
-   EXPERIENCE SECTION
-========================= */
+/* ==========================================
+   STORY
+========================================== */
 
-.experience {
-    min-height: 600px;
+.story {
+    max-width: 1150px;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-
-    gap: 80px;
-}
-
-.experience-visual {
-    position: relative;
-    height: 500px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.glowing-circle {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(245,185,66,.2),
-            transparent 65%
-        );
-
-    box-shadow:
-        0 0 100px rgba(245,185,66,.12);
-}
-
-.big-bowl {
-    position: absolute;
-
-    width: 300px;
-    height: 150px;
-
-    border-radius: 0 0 160px 160px;
-
-    background:
-        linear-gradient(
-            160deg,
-            #61331a,
-            #160a05
-        );
-
-    box-shadow:
-        0 50px 70px rgba(0,0,0,.7),
-        inset 0 -20px 30px rgba(0,0,0,.6);
-
-    transform: perspective(600px) rotateX(15deg);
-}
-
-.big-bowl::before {
-    content: "";
-
-    position: absolute;
-    width: 320px;
-    height: 100px;
-    left: -10px;
-    top: -30px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #f4d89b 0 8%,
-            #d99b4c 9% 13%,
-            #f4d89b 14% 20%,
-            #c2772d 21% 25%,
-            #f0cf8b 26% 40%,
-            #c37a2e 41% 45%,
-            #f1d89a 46% 100%
-        );
-}
-
-/* rice grains */
-
-.rice {
-    position: absolute;
-    width: 35px;
-    height: 9px;
-    border-radius: 50%;
-
-    background: #f6d99d;
-
-    box-shadow:
-        0 3px 5px rgba(0,0,0,.3);
-
-    transform: rotate(var(--r));
-}
-
-.r1 { top: 80px; left: 70px; --r: 20deg; }
-.r2 { top: 60px; left: 140px; --r: -30deg; }
-.r3 { top: 85px; left: 190px; --r: 40deg; }
-.r4 { top: 55px; left: 220px; --r: -15deg; }
-.r5 { top: 90px; left: 110px; --r: -50deg; }
-
-.experience-text h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(3rem, 5vw, 5rem);
-    line-height: 1;
-    margin-bottom: 25px;
-}
-
-.experience-text h2 span {
-    color: var(--gold);
-}
-
-.experience-text p {
-    color: #888;
-    line-height: 2;
-    max-width: 500px;
-}
-
-.feature-list {
-    margin-top: 30px;
-    display: grid;
-    gap: 15px;
-}
-
-.feature {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.feature-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(245,185,66,.1);
-    border: 1px solid rgba(245,185,66,.2);
-
-    color: var(--gold);
-}
-
-.feature span {
-    color: #ccc;
-}
-
-/* =========================
-   INFO
-========================= */
-
-.info {
-    max-width: 1200px;
     margin: auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.story-visual {
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.story-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,170,45,.16),
+            transparent 65%
+        );
+
+    filter: blur(10px);
+}
+
+.big-hand-css {
+    position: relative;
+
+    width: 330px;
+
+    height: 210px;
+
+    border-radius:
+        25% 25% 48% 48%;
+
+    background:
+        linear-gradient(
+            105deg,
+            #270c04,
+            #8e3e12 28%,
+            #d06c20 48%,
+            #5d2009 70%,
+            #160604
+        );
+
+    box-shadow:
+        inset 25px 10px 35px
+        rgba(255,210,120,.22),
+
+        inset -35px -25px 40px
+        rgba(0,0,0,.65),
+
+        0 55px 70px
+        rgba(0,0,0,.7);
+
+    z-index: 2;
+}
+
+.big-hand-css::before {
+    content: "";
+
+    position: absolute;
+
+    width: 355px;
+
+    height: 110px;
+
+    left: -12px;
+
+    top: -42px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #f4d89d 0 20%,
+            #c77a30 21% 28%,
+            #f1cc84 29% 43%,
+            #9a4718 44% 50%,
+            #2a0c04 51% 100%
+        );
+
+    box-shadow:
+        inset 0 10px 15px
+        rgba(0,0,0,.5);
+}
+
+.story-text h2 {
+    font-family:
+        'Playfair Display', serif;
+
+    font-size:
+        clamp(3rem,5vw,5rem);
+
+    line-height: 1;
+}
+
+.story-text h2 span {
+    color: var(--gold);
+}
+
+.story-text p {
+    color: #888;
+
+    margin-top: 25px;
+
+    line-height: 2;
+}
+
+/* ==========================================
+   INFO
+========================================== */
+
+.info-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 25px;
 }
@@ -748,121 +930,117 @@ section {
         linear-gradient(
             135deg,
             rgba(255,255,255,.07),
-            rgba(255,255,255,.025)
+            rgba(255,255,255,.02)
         );
 
-    border: 1px solid rgba(255,255,255,.08);
-
-    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 }
 
 .info-card h3 {
-    font-family: "Playfair Display", serif;
+    font-family:
+        'Playfair Display', serif;
+
     color: var(--gold);
+
     font-size: 2rem;
+
     margin-bottom: 25px;
 }
 
 .info-card p {
     color: #999;
-    margin-bottom: 12px;
+
+    margin-bottom: 15px;
 }
 
-/* =========================
+/* ==========================================
    CTA
-========================= */
+========================================== */
 
 .cta {
-    margin: 80px 7%;
+    margin:
+        50px 7% 100px;
 
-    padding: 100px 40px;
-
-    text-align: center;
+    padding:
+        100px 30px;
 
     border-radius: 40px;
+
+    text-align: center;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(245,185,66,.16),
+            rgba(255,185,50,.18),
             transparent 55%
         ),
-        linear-gradient(
-            135deg,
-            #191006,
-            #0c0905
-        );
+        #120b05;
 
-    border: 1px solid rgba(245,185,66,.15);
-
-    box-shadow:
-        0 50px 100px rgba(0,0,0,.5);
+    border:
+        1px solid
+        rgba(255,200,87,.15);
 }
 
 .cta h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(3rem, 6vw, 6rem);
-    margin-bottom: 25px;
+    font-family:
+        'Playfair Display', serif;
+
+    font-size:
+        clamp(3rem,6vw,6rem);
 }
 
 .cta p {
     color: #888;
-    margin-bottom: 35px;
+
+    margin:
+        20px 0 35px;
 }
 
-/* =========================
+/* ==========================================
    FOOTER
-========================= */
+========================================== */
 
 footer {
-    padding: 50px 7%;
-    border-top: 1px solid rgba(255,255,255,.06);
+    padding:
+        35px 7%;
 
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
 
     color: #555;
-    font-size: .8rem;
+
+    text-align: center;
 }
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
+/* ==========================================
+   MOBILE
+========================================== */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: 1s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width: 900px) {
-
-    nav {
-        padding: 12px 18px;
-    }
+@media(max-width:900px) {
 
     .nav-links {
         display: none;
     }
 
+    .produced-by {
+        top: 87px;
+        font-size: 1.05rem;
+    }
+
     .hero {
-        padding-top: 140px;
-        min-height: 1000px;
+        min-height: 950px;
+
+        text-align: center;
+
+        align-items:
+            flex-start;
     }
 
     .hero-content {
         width: 100%;
-        text-align: center;
     }
 
     .hero p {
@@ -870,114 +1048,106 @@ footer {
         margin-right: auto;
     }
 
-    .hero-buttons {
+    .hero-buttons,
+    .stats {
         justify-content: center;
     }
 
     #three-container {
+        top: 45%;
+
         width: 100%;
+
         height: 55%;
-        top: 48%;
-        right: 0;
-        opacity: .8;
     }
 
-    .stats {
-        justify-content: center;
-    }
-
-    .menu-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-
-    .experience {
+    .menu-grid,
+    .story,
+    .info-grid {
         grid-template-columns: 1fr;
     }
 
-    .info {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width: 500px) {
-
-    .hero h1 {
-        font-size: 4rem;
-    }
-
-    .stats {
+    .story {
         gap: 20px;
     }
-
-    .stat strong {
-        font-size: 1.3rem;
-    }
-
-    .section {
-        padding: 80px 6%;
-    }
-
-    .cta {
-        margin: 50px 5%;
-        padding: 70px 20px;
-    }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="background-glow glow1"></div>
-<div class="background-glow glow2"></div>
 
-<!-- ================= NAV ================= -->
+<!-- ==========================================
+     PRODUCED BY REHAN
+========================================== -->
+
+<div class="produced-by">
+    Produced by <span>Rehan</span>
+</div>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
 
 <nav>
-    <div class="logo">Biryani Fans Hub</div>
+
+    <div class="logo">
+        Biryani Fans Hub
+    </div>
 
     <div class="nav-links">
         <a href="#menu">Menu</a>
-        <a href="#experience">Our Story</a>
+        <a href="#story">Our Story</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <a href="#menu" class="nav-btn">Order Now</a>
+    <a href="#menu" class="order-btn">
+        Order Now
+    </a>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- ==========================================
+     HERO
+========================================== -->
 
-<header class="hero">
+<section class="hero">
+
+    <div class="hero-glow"></div>
 
     <div class="hero-content">
 
-        <div class="small-label">
+        <div class="label">
             Premium Dum Biryani • Brampton
         </div>
 
         <h1>
-            Taste the<br>
-            <span>Royal Biryani.</span>
+            Biryani<br>
+            <span>Like Royalty.</span>
         </h1>
 
         <p>
-            Fragrant basmati rice. Tender marinated meat.
-            Authentic spices. Slow-cooked with patience.
-            Experience a plate of biryani made like royalty.
+            Slow-cooked Dum Biryani with fragrant basmati rice,
+            premium spices and flavours that bring every bite to life.
         </p>
 
         <div class="hero-buttons">
-            <a href="#menu" class="primary-btn">
+
+            <a href="#menu" class="primary">
                 Explore Menu →
             </a>
 
-            <a href="#contact" class="secondary-btn">
+            <a href="#contact" class="secondary">
                 Visit Us
             </a>
+
         </div>
 
         <div class="stats">
+
             <div class="stat">
                 <strong>100%</strong>
                 <span>Fresh Ingredients</span>
@@ -992,43 +1162,48 @@ footer {
                 <strong>★ 4.9</strong>
                 <span>Fan Favourite</span>
             </div>
+
         </div>
 
     </div>
 
 
-    <!-- THREE JS -->
+    <!-- ======================================
+         3D HANDI
+    ======================================= -->
 
     <div id="three-container"></div>
 
 
-    <!-- Floating ingredients -->
+    <!-- FLOATING INGREDIENTS -->
 
-    <div class="ingredient mint i1"></div>
-    <div class="ingredient saffron i2"></div>
-    <div class="ingredient spice i3"></div>
-    <div class="ingredient mint i4"></div>
+    <div class="floating mint float1"></div>
 
-</header>
+    <div class="floating onion float2"></div>
+
+    <div class="floating chili float3"></div>
+
+</section>
 
 
-<!-- ================= MENU ================= -->
+<!-- ==========================================
+     MENU
+========================================== -->
 
 <section class="section" id="menu">
 
-    <div class="section-heading reveal">
+    <div class="heading">
 
         <div class="label">
             From Our Kitchen
         </div>
 
         <h2>
-            Signature <span class="gold-text">Dishes</span>
+            Our <span>Masterpieces.</span>
         </h2>
 
         <p>
-            Crafted with aromatic spices, premium basmati rice
-            and recipes passed down through generations.
+            Made with patience, premium ingredients and authentic spices.
         </p>
 
     </div>
@@ -1036,95 +1211,81 @@ footer {
 
     <div class="menu-grid">
 
-        <!-- CHICKEN -->
 
-        <div class="menu-card reveal">
+        <div class="card">
 
-            <div class="card-number">01</div>
-
-            <div class="food-visual">
-
-                <div class="bowl">
-
-                    <div class="steam steam1"></div>
-                    <div class="steam steam2"></div>
-                    <div class="steam steam3"></div>
-
-                </div>
-
+            <div class="card-number">
+                01
             </div>
 
-            <h3>Chicken Dum Biryani</h3>
+            <div class="food-icon">
+                <div class="mini-hand"></div>
+            </div>
+
+            <h3>
+                Chicken Dum Biryani
+            </h3>
 
             <p>
-                Long-grain basmati rice layered with juicy
-                marinated chicken, herbs, saffron and our
-                signature spice blend.
+                Juicy marinated chicken layered with aromatic
+                basmati rice and slow-cooked spices.
             </p>
 
-            <div class="price">$14.99 CAD</div>
+            <span class="price">
+                $14.99 CAD
+            </span>
 
         </div>
 
 
-        <!-- MUTTON -->
+        <div class="card">
 
-        <div class="menu-card reveal">
-
-            <div class="card-number">02</div>
-
-            <div class="food-visual">
-
-                <div class="bowl">
-
-                    <div class="steam steam1"></div>
-                    <div class="steam steam2"></div>
-                    <div class="steam steam3"></div>
-
-                </div>
-
+            <div class="card-number">
+                02
             </div>
 
-            <h3>Mutton Dum Biryani</h3>
+            <div class="food-icon">
+                <div class="mini-hand"></div>
+            </div>
+
+            <h3>
+                Mutton Dum Biryani
+            </h3>
 
             <p>
-                Tender goat meat slowly cooked with aromatic
-                spices and premium basmati rice until every
-                bite melts in your mouth.
+                Tender goat meat slow-cooked with rich spices,
+                herbs and fragrant premium rice.
             </p>
 
-            <div class="price">$16.99 CAD</div>
+            <span class="price">
+                $16.99 CAD
+            </span>
 
         </div>
 
 
-        <!-- VEGETABLE -->
+        <div class="card">
 
-        <div class="menu-card reveal">
-
-            <div class="card-number">03</div>
-
-            <div class="food-visual">
-
-                <div class="bowl">
-
-                    <div class="steam steam1"></div>
-                    <div class="steam steam2"></div>
-                    <div class="steam steam3"></div>
-
-                </div>
-
+            <div class="card-number">
+                03
             </div>
 
-            <h3>Vegetable Royal Biryani</h3>
+            <div class="food-icon">
+                <div class="mini-hand"></div>
+            </div>
+
+            <h3>
+                Vegetable Royal Biryani
+            </h3>
 
             <p>
-                Seasonal vegetables, paneer, saffron and
-                fresh mint combined with fragrant aged
-                basmati rice.
+                Fresh vegetables, paneer, saffron and mint
+                layered with aromatic basmati rice.
             </p>
 
-            <div class="price">$12.99 CAD</div>
+            <span class="price">
+                $12.99 CAD
+            </span>
 
         </div>
 
@@ -1133,79 +1294,37 @@ footer {
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- ==========================================
+     STORY
+========================================== -->
 
-<section class="section" id="experience">
+<section class="section" id="story">
 
-    <div class="experience">
+    <div class="story">
 
-        <div class="experience-visual reveal">
+        <div class="story-visual">
 
-            <div class="glowing-circle"></div>
-
-            <div class="big-bowl">
-
-                <div class="rice r1"></div>
-                <div class="rice r2"></div>
-                <div class="rice r3"></div>
-                <div class="rice r4"></div>
-                <div class="rice r5"></div>
-
-            </div>
+            <div class="big-hand-css"></div>
 
         </div>
 
 
-        <div class="experience-text reveal">
+        <div class="story-text">
 
-            <div class="small-label">
+            <div class="label">
                 The Biryani Fans Experience
             </div>
 
             <h2>
-                More than<br>
-                <span>just rice.</span>
+                Slow cooked.<br>
+                <span>Made with love.</span>
             </h2>
 
             <p>
-                Great biryani is about patience. Our ingredients
-                are layered carefully, sealed and slow-cooked
-                using the traditional Dum method.
+                Our biryani is carefully layered, sealed and cooked
+                using the traditional Dum method. Every grain absorbs
+                the flavours, spices and aromas inside the handi.
             </p>
-
-            <div class="feature-list">
-
-                <div class="feature">
-
-                    <div class="feature-icon">✦</div>
-
-                    <span>
-                        Premium aged basmati rice
-                    </span>
-
-                </div>
-
-                <div class="feature">
-
-                    <div class="feature-icon">✦</div>
-
-                    <span>
-                        Authentic Indian spices
-                    </span>
-
-                </div>
-
-                <div class="feature">
-
-                    <div class="feature-icon">✦</div>
-
-                    <span>
-                        Slow-cooked Dum technique
-                    </span>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -1214,28 +1333,32 @@ footer {
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- ==========================================
+     CONTACT
+========================================== -->
 
 <section class="section" id="contact">
 
-    <div class="section-heading reveal">
+    <div class="heading">
 
         <div class="label">
             Come Visit Us
         </div>
 
         <h2>
-            Find Your <span class="gold-text">Biryani.</span>
+            Find Your <span>Biryani.</span>
         </h2>
 
     </div>
 
 
-    <div class="info">
+    <div class="info-grid">
 
-        <div class="info-card reveal">
+        <div class="info-card">
 
-            <h3>Opening Hours</h3>
+            <h3>
+                Opening Hours
+            </h3>
 
             <p>
                 <strong>Monday – Thursday</strong><br>
@@ -1255,13 +1378,15 @@ footer {
         </div>
 
 
-        <div class="info-card reveal">
+        <div class="info-card">
 
-            <h3>Contact</h3>
+            <h3>
+                Contact
+            </h3>
 
             <p>
-                📍 125 Main St North,<br>
-                Brampton, ON, Canada
+                📍 125 Main St North,
+                Brampton, ON
             </p>
 
             <p>
@@ -1279,36 +1404,42 @@ footer {
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- ==========================================
+     CTA
+========================================== -->
 
-<section class="cta reveal">
+<section class="cta">
 
     <h2>
-        Hungry Yet?
+        Your Biryani<br>
+        Awaits.
     </h2>
 
     <p>
-        Your next plate of legendary biryani is waiting.
+        One pot. Hundreds of flavours.
     </p>
 
-    <a href="#menu" class="primary-btn">
-        Order Your Biryani →
+    <a href="#menu" class="primary">
+        Explore the Menu →
     </a>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
-    <div>
-        © 2026 Biryani Fans Hub
-    </div>
+    © 2026 Biryani Fans Hub.
+    All Rights Reserved.
 
-    <div>
-        Crafted with ❤️ in Brampton
-    </div>
+    <br><br>
+
+    <span style="
+        font-family:'Dancing Script',cursive;
+        color:#ffc857;
+        font-size:1.1rem;
+    ">
+        Produced by Rehan
+    </span>
 
 </footer>
 
@@ -1316,323 +1447,685 @@ footer {
 <script>
 
 /* ==========================================
-   THREE.JS 3D BIRYANI SCENE
+   THREE.JS CINEMATIC BIRYANI HANDI
 ========================================== */
 
-const container = document.getElementById("three-container");
+const container =
+    document.getElementById(
+        "three-container"
+    );
 
-const scene = new THREE.Scene();
 
-scene.fog = new THREE.FogExp2(0x070604, 0.035);
+const scene =
+    new THREE.Scene();
 
 
-const camera = new THREE.PerspectiveCamera(
-    45,
-    container.clientWidth / container.clientHeight,
-    0.1,
-    100
+const camera =
+    new THREE.PerspectiveCamera(
+        38,
+        container.clientWidth /
+        container.clientHeight,
+        .1,
+        100
+    );
+
+
+camera.position.set(
+    0,
+    1,
+    9
 );
 
-camera.position.set(0, 1.2, 7);
+
+const renderer =
+    new THREE.WebGLRenderer({
+        antialias:true,
+        alpha:true
+    });
 
 
-const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true
-});
+renderer.setPixelRatio(
+    Math.min(
+        window.devicePixelRatio,
+        2
+    )
+);
 
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 renderer.setSize(
     container.clientWidth,
     container.clientHeight
 );
 
-renderer.shadowMap.enabled = true;
 
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.enabled =
+    true;
 
-container.appendChild(renderer.domElement);
+
+renderer.shadowMap.type =
+    THREE.PCFSoftShadowMap;
+
+
+container.appendChild(
+    renderer.domElement
+);
 
 
 /* ==========================================
    LIGHTING
 ========================================== */
 
-const ambient = new THREE.AmbientLight(
-    0xffdca0,
-    1.4
+scene.add(
+    new THREE.AmbientLight(
+        0xffd6a0,
+        1.6
+    )
 );
 
-scene.add(ambient);
 
+const goldLight =
+    new THREE.PointLight(
+        0xffa533,
+        8,
+        25
+    );
 
-const goldLight = new THREE.PointLight(
-    0xffb52e,
-    7,
-    15
-);
-
-goldLight.position.set(3, 4, 4);
-
-goldLight.castShadow = true;
-
-scene.add(goldLight);
-
-
-const warmLight = new THREE.PointLight(
-    0xff6619,
+goldLight.position.set(
     4,
-    10
+    5,
+    6
 );
 
-warmLight.position.set(-4, 2, 2);
+scene.add(
+    goldLight
+);
 
-scene.add(warmLight);
+
+const orangeLight =
+    new THREE.PointLight(
+        0xff5414,
+        5,
+        20
+    );
+
+orangeLight.position.set(
+    -5,
+    2,
+    3
+);
+
+scene.add(
+    orangeLight
+);
+
+
+const topLight =
+    new THREE.PointLight(
+        0xffe6bd,
+        5,
+        15
+    );
+
+topLight.position.set(
+    0,
+    7,
+    2
+);
+
+scene.add(
+    topLight
+);
 
 
 /* ==========================================
-   BOWL
+   HANDI GROUP
 ========================================== */
 
-const bowlGroup = new THREE.Group();
+const handi =
+    new THREE.Group();
 
-scene.add(bowlGroup);
-
-
-/* bowl geometry */
-
-const bowlGeometry = new THREE.SphereGeometry(
-    2.15,
-    64,
-    32,
-    0,
-    Math.PI * 2,
-    Math.PI * .5,
-    Math.PI * .5
+scene.add(
+    handi
 );
 
-const bowlMaterial = new THREE.MeshPhysicalMaterial({
-    color: 0x39170b,
-    roughness: .25,
-    metalness: .25,
-    clearcoat: .8,
-    clearcoatRoughness: .15
-});
 
-const bowl = new THREE.Mesh(
-    bowlGeometry,
-    bowlMaterial
+/* ==========================================
+   COPPER POT
+========================================== */
+
+const potGeometry =
+    new THREE.SphereGeometry(
+        2.55,
+        64,
+        40,
+        0,
+        Math.PI * 2,
+        0,
+        Math.PI * .58
+    );
+
+
+const copperMaterial =
+    new THREE.MeshPhysicalMaterial({
+        color:0x8b3e14,
+        metalness:.8,
+        roughness:.2,
+        clearcoat:.9,
+        clearcoatRoughness:.15
+    });
+
+
+const pot =
+    new THREE.Mesh(
+        potGeometry,
+        copperMaterial
+    );
+
+
+pot.scale.set(
+    1,
+    .65,
+    1
 );
 
-bowl.scale.set(1, .55, 1);
 
-bowl.position.y = -0.5;
+pot.rotation.x =
+    Math.PI;
 
-bowl.castShadow = true;
 
-bowl.receiveShadow = true;
+pot.position.y =
+    -1.2;
 
-bowlGroup.add(bowl);
+
+pot.castShadow =
+    true;
+
+
+pot.receiveShadow =
+    true;
+
+
+handi.add(
+    pot
+);
+
+
+/* ==========================================
+   POT RIM
+========================================== */
+
+const rim =
+    new THREE.Mesh(
+        new THREE.TorusGeometry(
+            2.25,
+            .14,
+            20,
+            80
+        ),
+
+        new THREE.MeshPhysicalMaterial({
+            color:0xd78332,
+            metalness:.9,
+            roughness:.16
+        })
+    );
+
+
+rim.rotation.x =
+    Math.PI / 2;
+
+
+rim.position.y =
+    -.05;
+
+
+handi.add(
+    rim
+);
+
+
+/* ==========================================
+   HANDLES
+========================================== */
+
+function makeHandle(side) {
+
+    const handle =
+        new THREE.Mesh(
+            new THREE.TorusGeometry(
+                .55,
+                .1,
+                16,
+                32,
+                Math.PI
+            ),
+
+            copperMaterial
+        );
+
+
+    handle.rotation.z =
+        side * Math.PI / 2;
+
+
+    handle.position.x =
+        side * 2.45;
+
+
+    handle.position.y =
+        -1;
+
+
+    handi.add(
+        handle
+    );
+}
+
+
+makeHandle(1);
+makeHandle(-1);
 
 
 /* ==========================================
    RICE
 ========================================== */
 
-const riceGroup = new THREE.Group();
+const riceGroup =
+    new THREE.Group();
 
-bowlGroup.add(riceGroup);
-
-
-const riceMaterial = new THREE.MeshStandardMaterial({
-    color: 0xf3d59a,
-    roughness: .9
-});
+handi.add(
+    riceGroup
+);
 
 
-for(let i = 0; i < 220; i++){
+const riceMaterials = [
 
-    const geometry = new THREE.SphereGeometry(
-        .045,
-        6,
-        4
-    );
+    new THREE.MeshStandardMaterial({
+        color:0xf6dfa6,
+        roughness:.8
+    }),
 
-    const grain = new THREE.Mesh(
-        geometry,
-        riceMaterial
-    );
+    new THREE.MeshStandardMaterial({
+        color:0xe7b64c,
+        roughness:.8
+    }),
 
-    const angle = Math.random() * Math.PI * 2;
+    new THREE.MeshStandardMaterial({
+        color:0xffefd0,
+        roughness:.8
+    })
 
-    const radius = Math.sqrt(Math.random()) * 1.7;
+];
+
+
+for(
+    let i = 0;
+    i < 600;
+    i++
+) {
+
+    const grain =
+        new THREE.Mesh(
+            new THREE.CapsuleGeometry(
+                .028,
+                .13,
+                4,
+                8
+            ),
+
+            riceMaterials[
+                Math.floor(
+                    Math.random() *
+                    riceMaterials.length
+                )
+            ]
+        );
+
+
+    const angle =
+        Math.random() *
+        Math.PI * 2;
+
+
+    const radius =
+        Math.sqrt(
+            Math.random()
+        ) * 2.05;
+
 
     grain.position.x =
-        Math.cos(angle) * radius;
+        Math.cos(angle) *
+        radius;
+
 
     grain.position.z =
-        Math.sin(angle) * radius;
+        Math.sin(angle) *
+        radius;
+
 
     grain.position.y =
-        Math.random() * .35 +
-        .05 -
-        (radius * .08);
+        .05 +
+        Math.random() * .45 -
+        radius * .08;
 
-    grain.scale.y = 1.8;
 
-    grain.rotation.x = Math.random() * Math.PI;
-    grain.rotation.y = Math.random() * Math.PI;
-    grain.rotation.z = Math.random() * Math.PI;
+    grain.rotation.set(
+        Math.random() * Math.PI,
+        Math.random() * Math.PI,
+        Math.random() * Math.PI
+    );
 
-    riceGroup.add(grain);
+
+    riceGroup.add(
+        grain
+    );
+
 }
 
 
 /* ==========================================
-   SPICES / HERBS
+   CHICKEN PIECES
 ========================================== */
 
-function createSpice(color, size){
+const chickenMaterial =
+    new THREE.MeshStandardMaterial({
+        color:0x9d3d12,
+        roughness:.6
+    });
 
-    const geometry =
-        new THREE.SphereGeometry(
-            size,
-            12,
-            12
-        );
 
-    const material =
-        new THREE.MeshStandardMaterial({
-            color: color,
-            roughness: .8
-        });
+for(
+    let i = 0;
+    i < 14;
+    i++
+) {
 
-    const mesh =
+    const chicken =
         new THREE.Mesh(
-            geometry,
-            material
+            new THREE.DodecahedronGeometry(
+                .23 +
+                Math.random() * .12,
+                1
+            ),
+
+            chickenMaterial
         );
+
 
     const angle =
-        Math.random() * Math.PI * 2;
+        Math.random() *
+        Math.PI * 2;
+
 
     const radius =
-        Math.random() * 1.5;
+        Math.random() * 1.7;
 
-    mesh.position.set(
+
+    chicken.position.set(
         Math.cos(angle) * radius,
-        .3 + Math.random() * .2,
+        .25 + Math.random() * .3,
         Math.sin(angle) * radius
     );
 
-    riceGroup.add(mesh);
-}
+
+    chicken.rotation.set(
+        Math.random(),
+        Math.random(),
+        Math.random()
+    );
 
 
-for(let i = 0; i < 20; i++){
-
-    createSpice(
-        Math.random() > .5
-            ? 0x3c7b27
-            : 0xd67c1c,
-        .06
+    riceGroup.add(
+        chicken
     );
 
 }
 
 
 /* ==========================================
-   STEAM PARTICLES
+   HERBS
 ========================================== */
+
+const herbMaterial =
+    new THREE.MeshStandardMaterial({
+        color:0x3d7d27,
+        roughness:.7
+    });
+
+
+for(
+    let i = 0;
+    i < 35;
+    i++
+) {
+
+    const herb =
+        new THREE.Mesh(
+            new THREE.SphereGeometry(
+                .07,
+                8,
+                8
+            ),
+
+            herbMaterial
+        );
+
+
+    const angle =
+        Math.random() *
+        Math.PI * 2;
+
+
+    const radius =
+        Math.random() * 1.9;
+
+
+    herb.position.set(
+        Math.cos(angle) * radius,
+        .35 + Math.random() * .3,
+        Math.sin(angle) * radius
+    );
+
+
+    herb.scale.y =
+        .35;
+
+
+    riceGroup.add(
+        herb
+    );
+
+}
+
+
+/* ==========================================
+   FLOATING LID
+========================================== */
+
+const lidGroup =
+    new THREE.Group();
+
+handi.add(
+    lidGroup
+);
+
+
+const lid =
+    new THREE.Mesh(
+        new THREE.SphereGeometry(
+            2.25,
+            48,
+            24,
+            0,
+            Math.PI * 2,
+            0,
+            Math.PI * .45
+        ),
+
+        copperMaterial
+    );
+
+
+lid.scale.y =
+    .55;
+
+
+lid.rotation.x =
+    Math.PI;
+
+
+lidGroup.add(
+    lid
+);
+
+
+/* LID KNOB */
+
+const knob =
+    new THREE.Mesh(
+        new THREE.SphereGeometry(
+            .3,
+            24,
+            24
+        ),
+
+        new THREE.MeshPhysicalMaterial({
+            color:0xe0923a,
+            metalness:.9,
+            roughness:.15
+        })
+    );
+
+
+knob.position.y =
+    .75;
+
+
+lidGroup.add(
+    knob
+);
+
+
+lidGroup.position.y =
+    3.2;
+
+
+/* ==========================================
+   STEAM
+========================================== */
+
+const steamGroup =
+    new THREE.Group();
+
+handi.add(
+    steamGroup
+);
+
 
 const steamParticles = [];
 
-const steamMaterial =
-    new THREE.MeshBasicMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: .12
-    });
 
+for(
+    let i = 0;
+    i < 50;
+    i++
+) {
 
-for(let i = 0; i < 35; i++){
-
-    const geometry =
-        new THREE.SphereGeometry(
-            .07,
-            8,
-            8
-        );
-
-    const particle =
+    const steam =
         new THREE.Mesh(
-            geometry,
-            steamMaterial
+            new THREE.SphereGeometry(
+                .06 +
+                Math.random() * .09,
+                10,
+                10
+            ),
+
+            new THREE.MeshBasicMaterial({
+                color:0xfff1d4,
+                transparent:true,
+                opacity:.18
+            })
         );
 
-    particle.position.set(
-        (Math.random() - .5) * 2,
-        .5 + Math.random() * 1.8,
-        (Math.random() - .5) * 1.5
+
+    steam.position.set(
+        (Math.random()-.5)*3,
+        .8 + Math.random()*3,
+        (Math.random()-.5)*1.5
     );
 
-    particle.userData.speed =
-        .002 + Math.random() * .006;
 
-    particle.userData.offset =
-        Math.random() * Math.PI * 2;
+    steam.userData = {
 
-    steamParticles.push(particle);
+        speed:
+            .005 +
+            Math.random()*.012,
 
-    bowlGroup.add(particle);
+        drift:
+            Math.random() *
+            Math.PI * 2
+
+    };
+
+
+    steamParticles.push(
+        steam
+    );
+
+
+    steamGroup.add(
+        steam
+    );
+
 }
 
 
 /* ==========================================
-   FLOATING GOLD PARTICLES
+   GOLD PARTICLES
 ========================================== */
 
-const particleGeometry =
-    new THREE.BufferGeometry();
+const sparkles =
+    new THREE.Group();
 
-const particleCount = 500;
-
-const positions =
-    new Float32Array(
-        particleCount * 3
-    );
-
-for(let i = 0; i < particleCount * 3; i++){
-
-    positions[i] =
-        (Math.random() - .5) * 14;
-
-}
-
-particleGeometry.setAttribute(
-    "position",
-    new THREE.BufferAttribute(
-        positions,
-        3
-    )
+scene.add(
+    sparkles
 );
 
-const particleMaterial =
-    new THREE.PointsMaterial({
-        color: 0xffc34d,
-        size: .025,
-        transparent: true,
-        opacity: .5
-    });
 
-const particles =
-    new THREE.Points(
-        particleGeometry,
-        particleMaterial
+for(
+    let i = 0;
+    i < 200;
+    i++
+) {
+
+    const sparkle =
+        new THREE.Mesh(
+            new THREE.SphereGeometry(
+                .018,
+                6,
+                6
+            ),
+
+            new THREE.MeshBasicMaterial({
+                color:0xffd36b,
+                transparent:true,
+                opacity:.7
+            })
+        );
+
+
+    sparkle.position.set(
+        (Math.random()-.5)*10,
+        (Math.random()-.5)*8,
+        (Math.random()-.5)*5
     );
 
-scene.add(particles);
+
+    sparkles.add(
+        sparkle
+    );
+
+}
 
 
 /* ==========================================
@@ -1642,15 +2135,21 @@ scene.add(particles);
 let mouseX = 0;
 let mouseY = 0;
 
-document.addEventListener(
+
+window.addEventListener(
     "mousemove",
-    function(e){
+    event => {
 
         mouseX =
-            (e.clientX / window.innerWidth) * 2 - 1;
+            event.clientX /
+            window.innerWidth -
+            .5;
+
 
         mouseY =
-            (e.clientY / window.innerHeight) * 2 - 1;
+            event.clientY /
+            window.innerHeight -
+            .5;
 
     }
 );
@@ -1660,61 +2159,90 @@ document.addEventListener(
    ANIMATION
 ========================================== */
 
-const clock = new THREE.Clock();
-
-function animate(){
-
-    requestAnimationFrame(animate);
-
-    const time = clock.getElapsedTime();
+const clock =
+    new THREE.Clock();
 
 
-    /* rotate food */
+function animate() {
 
-    bowlGroup.rotation.y =
-        time * .18;
-
-
-    /* subtle floating */
-
-    bowlGroup.position.y =
-        Math.sin(time * 1.5) * .12;
+    requestAnimationFrame(
+        animate
+    );
 
 
-    /* mouse movement */
-
-    bowlGroup.rotation.x +=
-        ((mouseY * .12) -
-        bowlGroup.rotation.x) * .03;
-
-    bowlGroup.rotation.z +=
-        ((mouseX * -.08) -
-        bowlGroup.rotation.z) * .03;
+    const time =
+        clock.getElapsedTime();
 
 
-    /* steam */
+    /* HANDI */
+
+    handi.rotation.y =
+        time * .11;
+
+
+    handi.rotation.x +=
+        (
+            mouseY * .12 -
+            handi.rotation.x
+        ) * .025;
+
+
+    handi.rotation.z +=
+        (
+            mouseX * -.12 -
+            handi.rotation.z
+        ) * .025;
+
+
+    handi.position.y =
+        Math.sin(
+            time * 1.4
+        ) * .12;
+
+
+    /* LID */
+
+    lidGroup.position.y =
+        3.15 +
+        Math.sin(
+            time * 1.7
+        ) * .15;
+
+
+    lidGroup.rotation.y =
+        time * .15;
+
+
+    /* STEAM */
 
     steamParticles.forEach(
-        (particle, index) => {
+        (steam, index) => {
 
-            particle.position.y +=
-                particle.userData.speed;
+            steam.position.y +=
+                steam.userData.speed;
 
-            particle.position.x +=
+
+            steam.position.x +=
                 Math.sin(
                     time +
-                    particle.userData.offset
-                ) * .0015;
+                    steam.userData.drift
+                ) * .003;
 
-            particle.material.opacity =
+
+            steam.material.opacity =
                 .08 +
                 Math.sin(
-                    time * 2 + index
-                ) * .04;
+                    time * 2 +
+                    index
+                ) * .05;
 
-            if(particle.position.y > 3){
 
-                particle.position.y = .5;
+            if(
+                steam.position.y > 4.5
+            ) {
+
+                steam.position.y =
+                    .8;
 
             }
 
@@ -1722,10 +2250,8 @@ function animate(){
     );
 
 
-    /* particles */
-
-    particles.rotation.y =
-        time * .015;
+    sparkles.rotation.y =
+        time * .03;
 
 
     renderer.render(
@@ -1734,6 +2260,7 @@ function animate(){
     );
 
 }
+
 
 animate();
 
@@ -1744,13 +2271,15 @@ animate();
 
 window.addEventListener(
     "resize",
-    function(){
+    () => {
 
         camera.aspect =
             container.clientWidth /
             container.clientHeight;
 
+
         camera.updateProjectionMatrix();
+
 
         renderer.setSize(
             container.clientWidth,
@@ -1762,81 +2291,52 @@ window.addEventListener(
 
 
 /* ==========================================
-   SCROLL REVEAL
-========================================== */
-
-const reveals =
-    document.querySelectorAll(".reveal");
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if(entry.isIntersecting){
-
-                        entry.target
-                            .classList
-                            .add("visible");
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: .12
-        }
-    );
-
-
-reveals.forEach(
-    element =>
-        observer.observe(element)
-);
-
-
-/* ==========================================
-   3D MENU CARD MOUSE EFFECT
+   3D MENU CARDS
 ========================================== */
 
 document
-.querySelectorAll(".menu-card")
+.querySelectorAll(".card")
 .forEach(card => {
 
     card.addEventListener(
         "mousemove",
-        e => {
+        event => {
 
             const rect =
                 card.getBoundingClientRect();
 
+
             const x =
-                e.clientX - rect.left;
+                event.clientX -
+                rect.left;
+
 
             const y =
-                e.clientY - rect.top;
+                event.clientY -
+                rect.top;
 
-            const centerX =
-                rect.width / 2;
-
-            const centerY =
-                rect.height / 2;
 
             const rotateX =
-                (y - centerY) / 18;
+                (
+                    rect.height / 2 -
+                    y
+                ) / 20;
+
 
             const rotateY =
-                (centerX - x) / 18;
+                (
+                    x -
+                    rect.width / 2
+                ) / 20;
+
 
             card.style.transform =
-                `perspective(800px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-12px)`;
+                `
+                perspective(900px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-10px)
+                `;
 
         }
     );
@@ -1847,41 +2347,19 @@ document
         () => {
 
             card.style.transform =
-                "";
+                `
+                perspective(900px)
+                rotateX(0deg)
+                rotateY(0deg)
+                `;
 
         }
     );
 
 });
 
-
-/* ==========================================
-   PARALLAX HERO
-========================================== */
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        const scroll =
-            window.scrollY;
-
-        const three =
-            document.getElementById(
-                "three-container"
-            );
-
-        if(scroll < window.innerHeight){
-
-            three.style.transform =
-                `translateY(${scroll * .15}px)`;
-
-        }
-
-    }
-);
-
 </script>
 
 </body>
 </html>
+```
