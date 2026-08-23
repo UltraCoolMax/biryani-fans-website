@@ -1,128 +1,1887 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biryani Fans Hub | Premium Indian Restaurant in Brampton</title>
-    <style>
-        /* Base Reset & Colors */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0b0b0b; color: #f5f5f5; line-height: 1.6; }
-        
-        /* Typography Highlights */
-        .gold-text { color: #ffbc42; }
-        
-        /* Header & Hero Section */
-        header { 
-            background: linear-gradient(rgba(11, 11, 11, 0.8), rgba(11, 11, 11, 0.85)), url('https://unsplash.com') no-repeat center center/cover; 
-            padding: 120px 20px; 
-            text-align: center;
-            border-bottom: 2px solid #ffbc42;
-        }
-        header h1 { font-size: 3.5rem; color: #ffbc42; margin-bottom: 15px; letter-spacing: 1px; }
-        header p { font-size: 1.3rem; color: #dddddd; max-width: 600px; margin: 0 auto 30px auto; }
-        
-        /* Buttons */
-        .btn { 
-            display: inline-block; 
-            padding: 14px 35px; 
-            background-color: #ffbc42; 
-            color: #0b0b0b; 
-            font-weight: bold; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-size: 1.1rem;
-            transition: background 0.3s ease;
-        }
-        .btn:hover { background-color: #e09f25; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Container Blueprint */
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        h2 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; border-bottom: 1px solid #333; padding-bottom: 10px; }
+<title>Biryani Fans Hub | Premium Dum Biryani</title>
 
-        /* Menu Display Layout */
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .menu-item { background: #141414; padding: 25px; border-radius: 6px; border-left: 5px solid #ffbc42; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .menu-header h3 { font-size: 1.4rem; color: #ffffff; }
-        .menu-header .price { color: #ffbc42; font-weight: bold; font-size: 1.3rem; }
-        .menu-item p { color: #aaaaaa; font-size: 1rem; }
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-        /* Information Grid (Hours & Location) */
-        .info-section { background-color: #141414; border-top: 1px solid #222; }
-        .info-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        @media(min-width: 768px) { 
-            .info-grid { grid-template-columns: 1fr 1fr; } 
-            header h1 { font-size: 4.5rem; }
-        }
-        .info-box { text-align: left; }
-        .info-box h3 { font-size: 1.4rem; margin-bottom: 15px; color: #ffbc42; }
-        .info-box p { margin-bottom: 8px; color: #cccccc; }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-        /* Footer Statement */
-        footer { background-color: #050505; text-align: center; padding: 30px 20px; color: #666666; font-size: 0.9rem; border-top: 1px solid #111; }
-    </style>
+:root {
+    --gold: #f5b942;
+    --gold2: #ffda75;
+    --orange: #e87518;
+    --dark: #070604;
+    --dark2: #110c07;
+    --cream: #fff4d6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 70% 10%, rgba(245,185,66,.12), transparent 25%),
+        radial-gradient(circle at 10% 50%, rgba(232,117,24,.08), transparent 25%),
+        #070604;
+    color: white;
+    font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,185,66,.09), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow1 {
+    top: -250px;
+    right: -150px;
+}
+
+.glow2 {
+    bottom: -250px;
+    left: -150px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1100px, 92%);
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(15, 12, 8, .65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4),
+        inset 0 1px rgba(255,255,255,.08);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: .9rem;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ffda75, #e99b21);
+    color: #120d05;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: .85rem;
+    box-shadow: 0 8px 30px rgba(245,185,66,.2);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 70px;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 52%;
+    position: relative;
+    z-index: 5;
+}
+
+.small-label {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    line-height: .9;
+    margin-bottom: 30px;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        120deg,
+        #fff1ad,
+        #f5b942,
+        #fff1ad,
+        #d98b17
+    );
+
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: goldMove 6s ease infinite;
+}
+
+@keyframes goldMove {
+    0%,100% { background-position: 0%; }
+    50% { background-position: 100%; }
+}
+
+.hero p {
+    max-width: 600px;
+    color: #bcb8ae;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px 28px;
+    border-radius: 50px;
+
+    color: #110c04;
+    background: linear-gradient(135deg, #ffe28a, #e99b21);
+
+    text-decoration: none;
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 40px rgba(245,185,66,.25),
+        inset 0 1px rgba(255,255,255,.6);
+
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(245,185,66,.35);
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 16px 28px;
+    border-radius: 50px;
+
+    color: white;
+    border: 1px solid rgba(255,255,255,.15);
+
+    text-decoration: none;
+    font-weight: 500;
+
+    background: rgba(255,255,255,.03);
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.secondary-btn:hover {
+    background: rgba(255,255,255,.08);
+    transform: translateY(-5px);
+}
+
+/* =========================
+   3D CANVAS
+========================= */
+
+#three-container {
+    position: absolute;
+    right: -5%;
+    top: 5%;
+    width: 60%;
+    height: 90%;
+    z-index: 2;
+}
+
+#three-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* =========================
+   FLOATING INGREDIENTS
+========================= */
+
+.ingredient {
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,.5));
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.mint {
+    width: 35px;
+    height: 18px;
+    border-radius: 100% 0 100% 0;
+    background: linear-gradient(135deg,#8dbb45,#254c1c);
+    transform: rotate(35deg);
+}
+
+.saffron {
+    width: 50px;
+    height: 3px;
+    background: #ef8e19;
+    border-radius: 100%;
+    transform: rotate(-25deg);
+}
+
+.spice {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #b86827, #41170b);
+}
+
+.i1 { top: 25%; right: 9%; animation-delay: 0s; }
+.i2 { top: 65%; right: 20%; animation-delay: 1s; }
+.i3 { top: 20%; right: 32%; animation-delay: 2s; }
+.i4 { top: 75%; right: 40%; animation-delay: 3s; }
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.stat strong {
+    display: block;
+    color: var(--gold);
+    font-size: 1.7rem;
+    font-family: "Playfair Display", serif;
+}
+
+.stat span {
+    color: #777;
+    font-size: .75rem;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section {
+    position: relative;
+}
+
+.section {
+    padding: 120px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-heading .label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .7rem;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    margin-top: 15px;
+}
+
+.section-heading p {
+    color: #85817a;
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+/* =========================
+   MENU CARDS
+========================= */
+
+.menu-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.menu-card {
+    position: relative;
+    padding: 35px;
+
+    min-height: 390px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        border .3s;
+
+    transform-style: preserve-3d;
+}
+
+.menu-card:hover {
+    transform: translateY(-15px) rotateX(4deg) rotateY(-4deg);
+    border-color: rgba(245,185,66,.4);
+
+    box-shadow:
+        0 40px 80px rgba(0,0,0,.5),
+        0 0 40px rgba(245,185,66,.07);
+}
+
+.card-number {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    color: rgba(255,255,255,.035);
+}
+
+.food-visual {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateZ(35px);
+}
+
+/* 3D CSS FOOD */
+
+.bowl {
+    position: relative;
+    width: 150px;
+    height: 75px;
+
+    border-radius: 0 0 80px 80px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #4d2614,
+            #1b0d07 60%,
+            #542712
+        );
+
+    box-shadow:
+        inset 0 -10px 20px rgba(0,0,0,.6),
+        0 25px 40px rgba(0,0,0,.6);
+
+    transform: perspective(400px) rotateX(15deg);
+}
+
+.bowl::before {
+    content: "";
+    position: absolute;
+
+    width: 160px;
+    height: 45px;
+
+    top: -15px;
+    left: -5px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f1d29a 0 12%,
+            #e3bd75 13% 18%,
+            #b8732d 19% 21%,
+            #f4d99b 22% 30%,
+            #b96e28 31% 35%,
+            #f1cd86 36% 100%
+        );
+
+    box-shadow:
+        inset 0 5px 10px rgba(0,0,0,.5),
+        0 8px 15px rgba(0,0,0,.5);
+}
+
+.bowl::after {
+    content: "✦  •  ✦  •  ✦";
+
+    position: absolute;
+    top: -5px;
+    left: 15px;
+
+    color: #fff1b0;
+    font-size: 15px;
+    letter-spacing: 8px;
+}
+
+/* steam */
+
+.steam {
+    position: absolute;
+    width: 4px;
+    height: 55px;
+
+    background: linear-gradient(
+        to top,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    filter: blur(3px);
+    border-radius: 50%;
+
+    animation: steam 3s infinite ease-out;
+}
+
+.steam1 { left: 35%; }
+.steam2 { left: 50%; animation-delay: 1s; }
+.steam3 { left: 65%; animation-delay: 1.8s; }
+
+@keyframes steam {
+    0% {
+        transform: translateY(10px) scale(.8);
+        opacity: 0;
+    }
+
+    40% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-70px) translateX(20px) scale(1.4);
+        opacity: 0;
+    }
+}
+
+.menu-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    transform: translateZ(20px);
+}
+
+.menu-card p {
+    color: #888;
+    font-size: .85rem;
+    line-height: 1.8;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 20px;
+
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* =========================
+   EXPERIENCE SECTION
+========================= */
+
+.experience {
+    min-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 80px;
+}
+
+.experience-visual {
+    position: relative;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glowing-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245,185,66,.2),
+            transparent 65%
+        );
+
+    box-shadow:
+        0 0 100px rgba(245,185,66,.12);
+}
+
+.big-bowl {
+    position: absolute;
+
+    width: 300px;
+    height: 150px;
+
+    border-radius: 0 0 160px 160px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #61331a,
+            #160a05
+        );
+
+    box-shadow:
+        0 50px 70px rgba(0,0,0,.7),
+        inset 0 -20px 30px rgba(0,0,0,.6);
+
+    transform: perspective(600px) rotateX(15deg);
+}
+
+.big-bowl::before {
+    content: "";
+
+    position: absolute;
+    width: 320px;
+    height: 100px;
+    left: -10px;
+    top: -30px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #f4d89b 0 8%,
+            #d99b4c 9% 13%,
+            #f4d89b 14% 20%,
+            #c2772d 21% 25%,
+            #f0cf8b 26% 40%,
+            #c37a2e 41% 45%,
+            #f1d89a 46% 100%
+        );
+}
+
+/* rice grains */
+
+.rice {
+    position: absolute;
+    width: 35px;
+    height: 9px;
+    border-radius: 50%;
+
+    background: #f6d99d;
+
+    box-shadow:
+        0 3px 5px rgba(0,0,0,.3);
+
+    transform: rotate(var(--r));
+}
+
+.r1 { top: 80px; left: 70px; --r: 20deg; }
+.r2 { top: 60px; left: 140px; --r: -30deg; }
+.r3 { top: 85px; left: 190px; --r: 40deg; }
+.r4 { top: 55px; left: 220px; --r: -15deg; }
+.r5 { top: 90px; left: 110px; --r: -50deg; }
+
+.experience-text h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.experience-text h2 span {
+    color: var(--gold);
+}
+
+.experience-text p {
+    color: #888;
+    line-height: 2;
+    max-width: 500px;
+}
+
+.feature-list {
+    margin-top: 30px;
+    display: grid;
+    gap: 15px;
+}
+
+.feature {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(245,185,66,.1);
+    border: 1px solid rgba(245,185,66,.2);
+
+    color: var(--gold);
+}
+
+.feature span {
+    color: #ccc;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.info {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.info-card {
+    padding: 45px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+}
+
+.info-card h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.info-card p {
+    color: #999;
+    margin-bottom: 12px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    margin: 80px 7%;
+
+    padding: 100px 40px;
+
+    text-align: center;
+
+    border-radius: 40px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(245,185,66,.16),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #191006,
+            #0c0905
+        );
+
+    border: 1px solid rgba(245,185,66,.15);
+
+    box-shadow:
+        0 50px 100px rgba(0,0,0,.5);
+}
+
+.cta h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    margin-bottom: 25px;
+}
+
+.cta p {
+    color: #888;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 7%;
+    border-top: 1px solid rgba(255,255,255,.06);
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    color: #555;
+    font-size: .8rem;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    nav {
+        padding: 12px 18px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 140px;
+        min-height: 1000px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    #three-container {
+        width: 100%;
+        height: 55%;
+        top: 48%;
+        right: 0;
+        opacity: .8;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .experience {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+
+    .stat strong {
+        font-size: 1.3rem;
+    }
+
+    .section {
+        padding: 80px 6%;
+    }
+
+    .cta {
+        margin: 50px 5%;
+        padding: 70px 20px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Main Entry Hero Section -->
-    <header>
-        <h1>Biryani Fans Hub</h1>
-        <p>Experience the ultimate taste of traditional, slow-cooked Dum Biryani right here in <span class="gold-text">Brampton</span>.</p>
-        <a href="#menu" class="btn">Explore Our Menu</a>
-    </header>
+<div class="background-glow glow1"></div>
+<div class="background-glow glow2"></div>
 
-    <!-- Main Dining Menu -->
-    <section id="menu" class="container">
-        <h2>Our Culinary <span class="gold-text">Masterpieces</span></h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <div class="menu-header">
-                    <h3>Chicken Dum Biryani</h3>
-                    <span class="price">$14.99 CAD</span>
-                </div>
-                <p>Fragrant, long-grain basmati rice layered beautifully with juicy, marinated chicken, fresh herbs, and our secret blend of premium spices. Slow-cooked to absolute perfection.</p>
+<!-- ================= NAV ================= -->
+
+<nav>
+    <div class="logo">Biryani Fans Hub</div>
+
+    <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#experience">Our Story</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#menu" class="nav-btn">Order Now</a>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-label">
+            Premium Dum Biryani • Brampton
+        </div>
+
+        <h1>
+            Taste the<br>
+            <span>Royal Biryani.</span>
+        </h1>
+
+        <p>
+            Fragrant basmati rice. Tender marinated meat.
+            Authentic spices. Slow-cooked with patience.
+            Experience a plate of biryani made like royalty.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#menu" class="primary-btn">
+                Explore Menu →
+            </a>
+
+            <a href="#contact" class="secondary-btn">
+                Visit Us
+            </a>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Fresh Ingredients</span>
             </div>
-            <div class="menu-item">
-                <div class="menu-header">
-                    <h3>Mutton Dum Biryani</h3>
-                    <span class="price">$16.99 CAD</span>
-                </div>
-                <p>Tender, melt-in-your-mouth goat meat rich with authentic aromatic flavors, safely sealed and slow-cooked in its own juices beneath layers of premium basmati rice.</p>
+
+            <div class="stat">
+                <strong>DUM</strong>
+                <span>Slow Cooked</span>
             </div>
-            <div class="menu-item">
-                <div class="menu-header">
-                    <h3>Vegetable Royal Biryani</h3>
-                    <span class="price">$12.99 CAD</span>
-                </div>
-                <p>A royal mix of fresh seasonal garden vegetables, paneer cubes, saffron, and fresh mint leaves slow-cooked together with premium aged basmati rice grains.</p>
+
+            <div class="stat">
+                <strong>★ 4.9</strong>
+                <span>Fan Favourite</span>
             </div>
         </div>
-    </section>
 
-    <!-- Operational Hours & Physical Location Info -->
-    <section class="info-section">
-        <div class="container info-grid">
-            <div class="info-box">
-                <h3>Our Hours</h3>
-                <p><strong>Monday - Thursday:</strong> 11:30 AM - 10:00 PM</p>
-                <p><strong>Friday - Saturday:</strong> 11:30 AM - 11:00 PM</p>
-                <p><strong>Sunday:</strong> 12:00 PM - 9:30 PM</p>
-            </div>
-            <div class="info-box">
-                <h3>Contact & Location</h3>
-                <p><strong>Address:</strong> 125 Main St North, Brampton, ON, Canada</p>
-                <p><strong>Phone:</strong> (905) 555-0199</p>
-                <p><strong>Email:</strong> info@biryanifanshub.com</p>
-            </div>
+    </div>
+
+
+    <!-- THREE JS -->
+
+    <div id="three-container"></div>
+
+
+    <!-- Floating ingredients -->
+
+    <div class="ingredient mint i1"></div>
+    <div class="ingredient saffron i2"></div>
+    <div class="ingredient spice i3"></div>
+    <div class="ingredient mint i4"></div>
+
+</header>
+
+
+<!-- ================= MENU ================= -->
+
+<section class="section" id="menu">
+
+    <div class="section-heading reveal">
+
+        <div class="label">
+            From Our Kitchen
         </div>
-    </section>
 
-    <!-- Professional Business Close -->
-    <footer>
-        <p>&copy; 2026 Biryani Fans Hub. All Rights Reserved. Created proudly by [Your Name].</p>
-    </footer>
+        <h2>
+            Signature <span class="gold-text">Dishes</span>
+        </h2>
+
+        <p>
+            Crafted with aromatic spices, premium basmati rice
+            and recipes passed down through generations.
+        </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+        <!-- CHICKEN -->
+
+        <div class="menu-card reveal">
+
+            <div class="card-number">01</div>
+
+            <div class="food-visual">
+
+                <div class="bowl">
+
+                    <div class="steam steam1"></div>
+                    <div class="steam steam2"></div>
+                    <div class="steam steam3"></div>
+
+                </div>
+
+            </div>
+
+            <h3>Chicken Dum Biryani</h3>
+
+            <p>
+                Long-grain basmati rice layered with juicy
+                marinated chicken, herbs, saffron and our
+                signature spice blend.
+            </p>
+
+            <div class="price">$14.99 CAD</div>
+
+        </div>
+
+
+        <!-- MUTTON -->
+
+        <div class="menu-card reveal">
+
+            <div class="card-number">02</div>
+
+            <div class="food-visual">
+
+                <div class="bowl">
+
+                    <div class="steam steam1"></div>
+                    <div class="steam steam2"></div>
+                    <div class="steam steam3"></div>
+
+                </div>
+
+            </div>
+
+            <h3>Mutton Dum Biryani</h3>
+
+            <p>
+                Tender goat meat slowly cooked with aromatic
+                spices and premium basmati rice until every
+                bite melts in your mouth.
+            </p>
+
+            <div class="price">$16.99 CAD</div>
+
+        </div>
+
+
+        <!-- VEGETABLE -->
+
+        <div class="menu-card reveal">
+
+            <div class="card-number">03</div>
+
+            <div class="food-visual">
+
+                <div class="bowl">
+
+                    <div class="steam steam1"></div>
+                    <div class="steam steam2"></div>
+                    <div class="steam steam3"></div>
+
+                </div>
+
+            </div>
+
+            <h3>Vegetable Royal Biryani</h3>
+
+            <p>
+                Seasonal vegetables, paneer, saffron and
+                fresh mint combined with fragrant aged
+                basmati rice.
+            </p>
+
+            <div class="price">$12.99 CAD</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="section" id="experience">
+
+    <div class="experience">
+
+        <div class="experience-visual reveal">
+
+            <div class="glowing-circle"></div>
+
+            <div class="big-bowl">
+
+                <div class="rice r1"></div>
+                <div class="rice r2"></div>
+                <div class="rice r3"></div>
+                <div class="rice r4"></div>
+                <div class="rice r5"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-text reveal">
+
+            <div class="small-label">
+                The Biryani Fans Experience
+            </div>
+
+            <h2>
+                More than<br>
+                <span>just rice.</span>
+            </h2>
+
+            <p>
+                Great biryani is about patience. Our ingredients
+                are layered carefully, sealed and slow-cooked
+                using the traditional Dum method.
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+
+                    <div class="feature-icon">✦</div>
+
+                    <span>
+                        Premium aged basmati rice
+                    </span>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">✦</div>
+
+                    <span>
+                        Authentic Indian spices
+                    </span>
+
+                </div>
+
+                <div class="feature">
+
+                    <div class="feature-icon">✦</div>
+
+                    <span>
+                        Slow-cooked Dum technique
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+    <div class="section-heading reveal">
+
+        <div class="label">
+            Come Visit Us
+        </div>
+
+        <h2>
+            Find Your <span class="gold-text">Biryani.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="info">
+
+        <div class="info-card reveal">
+
+            <h3>Opening Hours</h3>
+
+            <p>
+                <strong>Monday – Thursday</strong><br>
+                11:30 AM – 10:00 PM
+            </p>
+
+            <p>
+                <strong>Friday – Saturday</strong><br>
+                11:30 AM – 11:00 PM
+            </p>
+
+            <p>
+                <strong>Sunday</strong><br>
+                12:00 PM – 9:30 PM
+            </p>
+
+        </div>
+
+
+        <div class="info-card reveal">
+
+            <h3>Contact</h3>
+
+            <p>
+                📍 125 Main St North,<br>
+                Brampton, ON, Canada
+            </p>
+
+            <p>
+                ☎ (905) 555-0199
+            </p>
+
+            <p>
+                ✉ info@biryanifanshub.com
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta reveal">
+
+    <h2>
+        Hungry Yet?
+    </h2>
+
+    <p>
+        Your next plate of legendary biryani is waiting.
+    </p>
+
+    <a href="#menu" class="primary-btn">
+        Order Your Biryani →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        © 2026 Biryani Fans Hub
+    </div>
+
+    <div>
+        Crafted with ❤️ in Brampton
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   THREE.JS 3D BIRYANI SCENE
+========================================== */
+
+const container = document.getElementById("three-container");
+
+const scene = new THREE.Scene();
+
+scene.fog = new THREE.FogExp2(0x070604, 0.035);
+
+
+const camera = new THREE.PerspectiveCamera(
+    45,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    100
+);
+
+camera.position.set(0, 1.2, 7);
+
+
+const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true
+});
+
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+renderer.setSize(
+    container.clientWidth,
+    container.clientHeight
+);
+
+renderer.shadowMap.enabled = true;
+
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+container.appendChild(renderer.domElement);
+
+
+/* ==========================================
+   LIGHTING
+========================================== */
+
+const ambient = new THREE.AmbientLight(
+    0xffdca0,
+    1.4
+);
+
+scene.add(ambient);
+
+
+const goldLight = new THREE.PointLight(
+    0xffb52e,
+    7,
+    15
+);
+
+goldLight.position.set(3, 4, 4);
+
+goldLight.castShadow = true;
+
+scene.add(goldLight);
+
+
+const warmLight = new THREE.PointLight(
+    0xff6619,
+    4,
+    10
+);
+
+warmLight.position.set(-4, 2, 2);
+
+scene.add(warmLight);
+
+
+/* ==========================================
+   BOWL
+========================================== */
+
+const bowlGroup = new THREE.Group();
+
+scene.add(bowlGroup);
+
+
+/* bowl geometry */
+
+const bowlGeometry = new THREE.SphereGeometry(
+    2.15,
+    64,
+    32,
+    0,
+    Math.PI * 2,
+    Math.PI * .5,
+    Math.PI * .5
+);
+
+const bowlMaterial = new THREE.MeshPhysicalMaterial({
+    color: 0x39170b,
+    roughness: .25,
+    metalness: .25,
+    clearcoat: .8,
+    clearcoatRoughness: .15
+});
+
+const bowl = new THREE.Mesh(
+    bowlGeometry,
+    bowlMaterial
+);
+
+bowl.scale.set(1, .55, 1);
+
+bowl.position.y = -0.5;
+
+bowl.castShadow = true;
+
+bowl.receiveShadow = true;
+
+bowlGroup.add(bowl);
+
+
+/* ==========================================
+   RICE
+========================================== */
+
+const riceGroup = new THREE.Group();
+
+bowlGroup.add(riceGroup);
+
+
+const riceMaterial = new THREE.MeshStandardMaterial({
+    color: 0xf3d59a,
+    roughness: .9
+});
+
+
+for(let i = 0; i < 220; i++){
+
+    const geometry = new THREE.SphereGeometry(
+        .045,
+        6,
+        4
+    );
+
+    const grain = new THREE.Mesh(
+        geometry,
+        riceMaterial
+    );
+
+    const angle = Math.random() * Math.PI * 2;
+
+    const radius = Math.sqrt(Math.random()) * 1.7;
+
+    grain.position.x =
+        Math.cos(angle) * radius;
+
+    grain.position.z =
+        Math.sin(angle) * radius;
+
+    grain.position.y =
+        Math.random() * .35 +
+        .05 -
+        (radius * .08);
+
+    grain.scale.y = 1.8;
+
+    grain.rotation.x = Math.random() * Math.PI;
+    grain.rotation.y = Math.random() * Math.PI;
+    grain.rotation.z = Math.random() * Math.PI;
+
+    riceGroup.add(grain);
+}
+
+
+/* ==========================================
+   SPICES / HERBS
+========================================== */
+
+function createSpice(color, size){
+
+    const geometry =
+        new THREE.SphereGeometry(
+            size,
+            12,
+            12
+        );
+
+    const material =
+        new THREE.MeshStandardMaterial({
+            color: color,
+            roughness: .8
+        });
+
+    const mesh =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+    const angle =
+        Math.random() * Math.PI * 2;
+
+    const radius =
+        Math.random() * 1.5;
+
+    mesh.position.set(
+        Math.cos(angle) * radius,
+        .3 + Math.random() * .2,
+        Math.sin(angle) * radius
+    );
+
+    riceGroup.add(mesh);
+}
+
+
+for(let i = 0; i < 20; i++){
+
+    createSpice(
+        Math.random() > .5
+            ? 0x3c7b27
+            : 0xd67c1c,
+        .06
+    );
+
+}
+
+
+/* ==========================================
+   STEAM PARTICLES
+========================================== */
+
+const steamParticles = [];
+
+const steamMaterial =
+    new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: .12
+    });
+
+
+for(let i = 0; i < 35; i++){
+
+    const geometry =
+        new THREE.SphereGeometry(
+            .07,
+            8,
+            8
+        );
+
+    const particle =
+        new THREE.Mesh(
+            geometry,
+            steamMaterial
+        );
+
+    particle.position.set(
+        (Math.random() - .5) * 2,
+        .5 + Math.random() * 1.8,
+        (Math.random() - .5) * 1.5
+    );
+
+    particle.userData.speed =
+        .002 + Math.random() * .006;
+
+    particle.userData.offset =
+        Math.random() * Math.PI * 2;
+
+    steamParticles.push(particle);
+
+    bowlGroup.add(particle);
+}
+
+
+/* ==========================================
+   FLOATING GOLD PARTICLES
+========================================== */
+
+const particleGeometry =
+    new THREE.BufferGeometry();
+
+const particleCount = 500;
+
+const positions =
+    new Float32Array(
+        particleCount * 3
+    );
+
+for(let i = 0; i < particleCount * 3; i++){
+
+    positions[i] =
+        (Math.random() - .5) * 14;
+
+}
+
+particleGeometry.setAttribute(
+    "position",
+    new THREE.BufferAttribute(
+        positions,
+        3
+    )
+);
+
+const particleMaterial =
+    new THREE.PointsMaterial({
+        color: 0xffc34d,
+        size: .025,
+        transparent: true,
+        opacity: .5
+    });
+
+const particles =
+    new THREE.Points(
+        particleGeometry,
+        particleMaterial
+    );
+
+scene.add(particles);
+
+
+/* ==========================================
+   MOUSE INTERACTION
+========================================== */
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        mouseX =
+            (e.clientX / window.innerWidth) * 2 - 1;
+
+        mouseY =
+            (e.clientY / window.innerHeight) * 2 - 1;
+
+    }
+);
+
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+const clock = new THREE.Clock();
+
+function animate(){
+
+    requestAnimationFrame(animate);
+
+    const time = clock.getElapsedTime();
+
+
+    /* rotate food */
+
+    bowlGroup.rotation.y =
+        time * .18;
+
+
+    /* subtle floating */
+
+    bowlGroup.position.y =
+        Math.sin(time * 1.5) * .12;
+
+
+    /* mouse movement */
+
+    bowlGroup.rotation.x +=
+        ((mouseY * .12) -
+        bowlGroup.rotation.x) * .03;
+
+    bowlGroup.rotation.z +=
+        ((mouseX * -.08) -
+        bowlGroup.rotation.z) * .03;
+
+
+    /* steam */
+
+    steamParticles.forEach(
+        (particle, index) => {
+
+            particle.position.y +=
+                particle.userData.speed;
+
+            particle.position.x +=
+                Math.sin(
+                    time +
+                    particle.userData.offset
+                ) * .0015;
+
+            particle.material.opacity =
+                .08 +
+                Math.sin(
+                    time * 2 + index
+                ) * .04;
+
+            if(particle.position.y > 3){
+
+                particle.position.y = .5;
+
+            }
+
+        }
+    );
+
+
+    /* particles */
+
+    particles.rotation.y =
+        time * .015;
+
+
+    renderer.render(
+        scene,
+        camera
+    );
+
+}
+
+animate();
+
+
+/* ==========================================
+   RESIZE
+========================================== */
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        camera.aspect =
+            container.clientWidth /
+            container.clientHeight;
+
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(
+            container.clientWidth,
+            container.clientHeight
+        );
+
+    }
+);
+
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const reveals =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+reveals.forEach(
+    element =>
+        observer.observe(element)
+);
+
+
+/* ==========================================
+   3D MENU CARD MOUSE EFFECT
+========================================== */
+
+document
+.querySelectorAll(".menu-card")
+.forEach(card => {
+
+    card.addEventListener(
+        "mousemove",
+        e => {
+
+            const rect =
+                card.getBoundingClientRect();
+
+            const x =
+                e.clientX - rect.left;
+
+            const y =
+                e.clientY - rect.top;
+
+            const centerX =
+                rect.width / 2;
+
+            const centerY =
+                rect.height / 2;
+
+            const rotateX =
+                (y - centerY) / 18;
+
+            const rotateY =
+                (centerX - x) / 18;
+
+            card.style.transform =
+                `perspective(800px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-12px)`;
+
+        }
+    );
+
+
+    card.addEventListener(
+        "mouseleave",
+        () => {
+
+            card.style.transform =
+                "";
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   PARALLAX HERO
+========================================== */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const scroll =
+            window.scrollY;
+
+        const three =
+            document.getElementById(
+                "three-container"
+            );
+
+        if(scroll < window.innerHeight){
+
+            three.style.transform =
+                `translateY(${scroll * .15}px)`;
+
+        }
+
+    }
+);
+
+</script>
 
 </body>
 </html>
