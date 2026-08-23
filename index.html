@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biryani Fans Hub | Premium Indian Restaurant in Brampton</title>
+    <style>
+        /* Base Reset & Colors */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #0b0b0b; color: #f5f5f5; line-height: 1.6; }
+        
+        /* Typography Highlights */
+        .gold-text { color: #ffbc42; }
+        
+        /* Header & Hero Section */
+        header { 
+            background: linear-gradient(rgba(11, 11, 11, 0.8), rgba(11, 11, 11, 0.85)), url('https://unsplash.com') no-repeat center center/cover; 
+            padding: 120px 20px; 
+            text-align: center;
+            border-bottom: 2px solid #ffbc42;
+        }
+        header h1 { font-size: 3.5rem; color: #ffbc42; margin-bottom: 15px; letter-spacing: 1px; }
+        header p { font-size: 1.3rem; color: #dddddd; max-width: 600px; margin: 0 auto 30px auto; }
+        
+        /* Buttons */
+        .btn { 
+            display: inline-block; 
+            padding: 14px 35px; 
+            background-color: #ffbc42; 
+            color: #0b0b0b; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        .btn:hover { background-color: #e09f25; }
+
+        /* Container Blueprint */
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+        /* Menu Display Layout */
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .menu-item { background: #141414; padding: 25px; border-radius: 6px; border-left: 5px solid #ffbc42; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .menu-header h3 { font-size: 1.4rem; color: #ffffff; }
+        .menu-header .price { color: #ffbc42; font-weight: bold; font-size: 1.3rem; }
+        .menu-item p { color: #aaaaaa; font-size: 1rem; }
+
+        /* Information Grid (Hours & Location) */
+        .info-section { background-color: #141414; border-top: 1px solid #222; }
+        .info-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media(min-width: 768px) { 
+            .info-grid { grid-template-columns: 1fr 1fr; } 
+            header h1 { font-size: 4.5rem; }
+        }
+        .info-box { text-align: left; }
+        .info-box h3 { font-size: 1.4rem; margin-bottom: 15px; color: #ffbc42; }
+        .info-box p { margin-bottom: 8px; color: #cccccc; }
+
+        /* Footer Statement */
+        footer { background-color: #050505; text-align: center; padding: 30px 20px; color: #666666; font-size: 0.9rem; border-top: 1px solid #111; }
+    </style>
+</head>
+<body>
+
+    <!-- Main Entry Hero Section -->
+    <header>
+        <h1>Biryani Fans Hub</h1>
+        <p>Experience the ultimate taste of traditional, slow-cooked Dum Biryani right here in <span class="gold-text">Brampton</span>.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+    </header>
+
+    <!-- Main Dining Menu -->
+    <section id="menu" class="container">
+        <h2>Our Culinary <span class="gold-text">Masterpieces</span></h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Chicken Dum Biryani</h3>
+                    <span class="price">$14.99 CAD</span>
+                </div>
+                <p>Fragrant, long-grain basmati rice layered beautifully with juicy, marinated chicken, fresh herbs, and our secret blend of premium spices. Slow-cooked to absolute perfection.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Mutton Dum Biryani</h3>
+                    <span class="price">$16.99 CAD</span>
+                </div>
+                <p>Tender, melt-in-your-mouth goat meat rich with authentic aromatic flavors, safely sealed and slow-cooked in its own juices beneath layers of premium basmati rice.</p>
+            </div>
+            <div class="menu-item">
+                <div class="menu-header">
+                    <h3>Vegetable Royal Biryani</h3>
+                    <span class="price">$12.99 CAD</span>
+                </div>
+                <p>A royal mix of fresh seasonal garden vegetables, paneer cubes, saffron, and fresh mint leaves slow-cooked together with premium aged basmati rice grains.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Hours & Physical Location Info -->
+    <section class="info-section">
+        <div class="container info-grid">
+            <div class="info-box">
+                <h3>Our Hours</h3>
+                <p><strong>Monday - Thursday:</strong> 11:30 AM - 10:00 PM</p>
+                <p><strong>Friday - Saturday:</strong> 11:30 AM - 11:00 PM</p>
+                <p><strong>Sunday:</strong> 12:00 PM - 9:30 PM</p>
+            </div>
+            <div class="info-box">
+                <h3>Contact & Location</h3>
+                <p><strong>Address:</strong> 125 Main St North, Brampton, ON, Canada</p>
+                <p><strong>Phone:</strong> (905) 555-0199</p>
+                <p><strong>Email:</strong> info@biryanifanshub.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Business Close -->
+    <footer>
+        <p>&copy; 2026 Biryani Fans Hub. All Rights Reserved. Created proudly by [Your Name].</p>
+    </footer>
+
+</body>
+</html>
