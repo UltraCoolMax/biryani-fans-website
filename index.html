@@ -1,2362 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Biryani Fans Hub | Premium Dum Biryani</title>
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Three.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Biryani Fans — authentic handi-cooked biryani, sizzling tikkas & street-style snacks in the Dixie Outlet Mall food court, Mississauga. 100% Halal." />
+<title>Biryani Fans · The Soul of Mississauga, One Grain at a Time</title>
+<link rel="icon" href__="https://media.base44.com/images/public/6aa722afb3174284df440c26/8f784609f_generated_2b954507.jpg" />
+<link rel="preconnect" href__="https://fonts.googleapis.com">
+<link rel="preconnect" href__="https://fonts.gstatic.com" crossorigin>
+<link href__="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-:root {
-    --gold: #ffc857;
-    --gold-light: #ffe6a6;
-    --orange: #e87d20;
-    --dark: #080604;
-    --card: #15100a;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', Arial, sans-serif;
-
-    background:
-        radial-gradient(
-            circle at 80% 10%,
-            rgba(255,160,40,.12),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 20% 50%,
-            rgba(255,100,0,.07),
-            transparent 25%
-        ),
-        #080604;
-
-    color: white;
-    overflow-x: hidden;
-}
-
-/* ==========================================
-   PRODUCED BY REHAN
-========================================== */
-
-.produced-by {
-    position: fixed;
-
-    top: 92px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 999;
-
-    font-family: 'Dancing Script', cursive;
-
-    font-size: 1.25rem;
-
-    letter-spacing: 1px;
-
-    color: rgba(255,255,255,.6);
-
-    text-shadow:
-        0 0 15px rgba(255,200,87,.15);
-
-    pointer-events: none;
-
-    white-space: nowrap;
-}
-
-.produced-by span {
-    color: var(--gold);
-
-    font-weight: 700;
-
-    text-shadow:
-        0 0 12px rgba(255,200,87,.25);
-}
-
-/* ==========================================
-   BACKGROUND PARTICLE EFFECT
-========================================== */
-
-body::before {
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background-image:
-        radial-gradient(
-            rgba(255,200,87,.08) 1px,
-            transparent 1px
-        );
-
-    background-size: 35px 35px;
-
-    mask-image:
-        linear-gradient(
-            to bottom,
-            black,
-            transparent
-        );
-
-    z-index: -1;
-}
-
-/* ==========================================
-   NAVBAR
-========================================== */
-
-nav {
-    position: fixed;
-
-    top: 20px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: min(1150px, 92%);
-
-    padding: 14px 25px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    background:
-        rgba(18,12,7,.72);
-
-    backdrop-filter: blur(20px);
-
-    border:
-        1px solid rgba(255,255,255,.1);
-
-    border-radius: 50px;
-
-    z-index: 1000;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,.35);
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-
-    font-size: 1.3rem;
-
-    color: var(--gold);
-
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-
-    gap: 30px;
-}
-
-.nav-links a {
-    color: #ccc;
-
-    text-decoration: none;
-
-    font-size: .9rem;
-
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-.order-btn {
-    background:
-        linear-gradient(
-            135deg,
-            #ffe59a,
-            #e89120
-        );
-
-    color: #180d04;
-
-    padding: 11px 22px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    text-decoration: none;
-
-    box-shadow:
-        0 8px 25px rgba(240,145,30,.18);
-}
-
-/* ==========================================
-   HERO
-========================================== */
-
-.hero {
-    min-height: 100vh;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    padding:
-        140px 7% 70px;
-
-    overflow: hidden;
-}
-
-.hero-content {
-    width: 50%;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.label {
-    color: var(--gold);
-
-    font-size: .72rem;
-
-    letter-spacing: 4px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-
-    font-size:
-        clamp(4.2rem, 7vw, 8rem);
-
-    line-height: .88;
-
-    letter-spacing: -4px;
-}
-
-.hero h1 span {
-    color: var(--gold);
-
-    text-shadow:
-        0 0 40px
-        rgba(255,190,70,.18);
-}
-
-.hero p {
-    max-width: 550px;
-
-    margin-top: 30px;
-
-    color: #aaa39a;
-
-    line-height: 1.9;
-}
-
-.hero-buttons {
-    margin-top: 35px;
-
-    display: flex;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.primary {
-    padding: 16px 28px;
-
-    border-radius: 40px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe89d,
-            #e99422
-        );
-
-    color: #1a0d04;
-
-    text-decoration: none;
-
-    font-weight: 700;
-
-    box-shadow:
-        0 15px 45px
-        rgba(240,145,30,.25);
-
-    transition: .3s;
-}
-
-.primary:hover {
-    transform:
-        translateY(-5px)
-        scale(1.02);
-}
-
-.secondary {
-    padding: 16px 28px;
-
-    border-radius: 40px;
-
-    color: white;
-
-    text-decoration: none;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    background:
-        rgba(255,255,255,.03);
-
-    transition: .3s;
-}
-
-.secondary:hover {
-    background:
-        rgba(255,255,255,.08);
-
-    transform:
-        translateY(-4px);
-}
-
-.stats {
-    display: flex;
-
-    gap: 45px;
-
-    margin-top: 50px;
-}
-
-.stat strong {
-    display: block;
-
-    font-size: 1.6rem;
-
-    color: var(--gold);
-}
-
-.stat span {
-    font-size: .7rem;
-
-    color: #777;
-}
-
-/* ==========================================
-   3D HERO
-========================================== */
-
-#three-container {
-    position: absolute;
-
-    right: 0;
-
-    top: 0;
-
-    width: 58%;
-
-    height: 100%;
-
-    z-index: 2;
-}
-
-.hero-glow {
-    position: absolute;
-
-    width: 650px;
-
-    height: 650px;
-
-    right: 1%;
-
-    top: 12%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,170,45,.18),
-            rgba(255,100,0,.05) 40%,
-            transparent 70%
-        );
-
-    filter: blur(10px);
-
-    pointer-events: none;
-}
-
-/* ==========================================
-   FLOATING INGREDIENTS
-========================================== */
-
-.floating {
-    position: absolute;
-
-    z-index: 4;
-
-    pointer-events: none;
-
-    filter:
-        drop-shadow(
-            0 15px 10px
-            rgba(0,0,0,.6)
-        );
-}
-
-.mint {
-    width: 42px;
-
-    height: 23px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #9ac95d,
-            #254c1d
-        );
-
-    border-radius:
-        100% 0 100% 0;
-}
-
-.onion {
-    width: 32px;
-
-    height: 18px;
-
-    border:
-        5px solid #d58a50;
-
-    border-radius: 50%;
-
-    border-left-color:
-        #ffe0b2;
-
-    transform: rotate(25deg);
-}
-
-.chili {
-    width: 55px;
-
-    height: 15px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #7b160b,
-            #d73d18
-        );
-
-    border-radius:
-        100% 20% 100% 20%;
-
-    transform: rotate(-35deg);
-}
-
-.float1 {
-    right: 12%;
-
-    top: 22%;
-
-    animation:
-        floatOne 5s
-        ease-in-out infinite;
-}
-
-.float2 {
-    right: 40%;
-
-    top: 17%;
-
-    animation:
-        floatTwo 6s
-        ease-in-out infinite;
-}
-
-.float3 {
-    right: 7%;
-
-    bottom: 25%;
-
-    animation:
-        floatThree 5.5s
-        ease-in-out infinite;
-}
-
-@keyframes floatOne {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(0);
-    }
-
-    50% {
-        transform:
-            translateY(-25px)
-            rotate(20deg);
-    }
-
-}
-
-@keyframes floatTwo {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(25deg);
-    }
-
-    50% {
-        transform:
-            translateY(-35px)
-            rotate(-20deg);
-    }
-
-}
-
-@keyframes floatThree {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-35deg);
-    }
-
-    50% {
-        transform:
-            translateY(-20px)
-            rotate(5deg);
-    }
-
-}
-
-/* ==========================================
-   SECTIONS
-========================================== */
-
-.section {
-    padding:
-        120px 7%;
-}
-
-.heading {
-    text-align: center;
-
-    margin-bottom: 65px;
-}
-
-.heading h2 {
-    font-family:
-        'Playfair Display', serif;
-
-    font-size:
-        clamp(3rem,5vw,5.5rem);
-}
-
-.heading h2 span {
-    color: var(--gold);
-}
-
-.heading p {
-    color: #888;
-
-    max-width: 600px;
-
-    margin: 15px auto;
-}
-
-/* ==========================================
-   MENU
-========================================== */
-
-.menu-grid {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 25px;
-}
-
-.card {
-    min-height: 430px;
-
-    padding: 30px;
-
-    border-radius: 30px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.09),
-            rgba(255,255,255,.025)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    transition:
-        transform .2s ease,
-        border .3s;
-
-    transform-style:
-        preserve-3d;
-}
-
-.card:hover {
-    border-color:
-        rgba(255,200,87,.5);
-
-    box-shadow:
-        0 30px 70px
-        rgba(0,0,0,.4);
-}
-
-.card-number {
-    position: absolute;
-
-    right: 20px;
-
-    top: 10px;
-
-    font-size: 5rem;
-
-    color:
-        rgba(255,255,255,.035);
-
-    font-family:
-        'Playfair Display', serif;
-}
-
-.food-icon {
-    height: 210px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.mini-hand {
-    width: 170px;
-
-    height: 100px;
-
-    position: relative;
-
-    border-radius:
-        25% 25% 50% 50%;
-
-    background:
-        linear-gradient(
-            100deg,
-            #3b1607,
-            #a95416 35%,
-            #5a2109 60%,
-            #180704
-        );
-
-    box-shadow:
-        inset 15px 5px 20px
-        rgba(255,180,80,.2),
-
-        inset -20px -15px 25px
-        rgba(0,0,0,.6),
-
-        0 30px 35px
-        rgba(0,0,0,.6);
-}
-
-.mini-hand::before {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-
-    height: 55px;
-
-    left: -5px;
-
-    top: -20px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #f3d18b 0 35%,
-            #bc702d 36% 42%,
-            #321207 43% 100%
-        );
-}
-
-.card h3 {
-    font-family:
-        'Playfair Display', serif;
-
-    font-size: 1.6rem;
-
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #888;
-
-    font-size: .86rem;
-
-    line-height: 1.8;
-}
-
-.price {
-    display: block;
-
-    color: var(--gold);
-
-    font-weight: bold;
-
-    font-size: 1.2rem;
-
-    margin-top: 20px;
-}
-
-/* ==========================================
-   STORY
-========================================== */
-
-.story {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 80px;
-
-    align-items: center;
-}
-
-.story-visual {
-    min-height: 500px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-.story-visual::before {
-    content: "";
-
-    position: absolute;
-
-    width: 450px;
-
-    height: 450px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,170,45,.16),
-            transparent 65%
-        );
-
-    filter: blur(10px);
-}
-
-.big-hand-css {
-    position: relative;
-
-    width: 330px;
-
-    height: 210px;
-
-    border-radius:
-        25% 25% 48% 48%;
-
-    background:
-        linear-gradient(
-            105deg,
-            #270c04,
-            #8e3e12 28%,
-            #d06c20 48%,
-            #5d2009 70%,
-            #160604
-        );
-
-    box-shadow:
-        inset 25px 10px 35px
-        rgba(255,210,120,.22),
-
-        inset -35px -25px 40px
-        rgba(0,0,0,.65),
-
-        0 55px 70px
-        rgba(0,0,0,.7);
-
-    z-index: 2;
-}
-
-.big-hand-css::before {
-    content: "";
-
-    position: absolute;
-
-    width: 355px;
-
-    height: 110px;
-
-    left: -12px;
-
-    top: -42px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #f4d89d 0 20%,
-            #c77a30 21% 28%,
-            #f1cc84 29% 43%,
-            #9a4718 44% 50%,
-            #2a0c04 51% 100%
-        );
-
-    box-shadow:
-        inset 0 10px 15px
-        rgba(0,0,0,.5);
-}
-
-.story-text h2 {
-    font-family:
-        'Playfair Display', serif;
-
-    font-size:
-        clamp(3rem,5vw,5rem);
-
-    line-height: 1;
-}
-
-.story-text h2 span {
-    color: var(--gold);
-}
-
-.story-text p {
-    color: #888;
-
-    margin-top: 25px;
-
-    line-height: 2;
-}
-
-/* ==========================================
-   INFO
-========================================== */
-
-.info-grid {
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 25px;
-}
-
-.info-card {
-    padding: 45px;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.07),
-            rgba(255,255,255,.02)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-}
-
-.info-card h3 {
-    font-family:
-        'Playfair Display', serif;
-
-    color: var(--gold);
-
-    font-size: 2rem;
-
-    margin-bottom: 25px;
-}
-
-.info-card p {
-    color: #999;
-
-    margin-bottom: 15px;
-}
-
-/* ==========================================
-   CTA
-========================================== */
-
-.cta {
-    margin:
-        50px 7% 100px;
-
-    padding:
-        100px 30px;
-
-    border-radius: 40px;
-
-    text-align: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,185,50,.18),
-            transparent 55%
-        ),
-        #120b05;
-
-    border:
-        1px solid
-        rgba(255,200,87,.15);
-}
-
-.cta h2 {
-    font-family:
-        'Playfair Display', serif;
-
-    font-size:
-        clamp(3rem,6vw,6rem);
-}
-
-.cta p {
-    color: #888;
-
-    margin:
-        20px 0 35px;
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer {
-    padding:
-        35px 7%;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.06);
-
-    color: #555;
-
-    text-align: center;
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:900px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .produced-by {
-        top: 87px;
-        font-size: 1.05rem;
-    }
-
-    .hero {
-        min-height: 950px;
-
-        text-align: center;
-
-        align-items:
-            flex-start;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons,
-    .stats {
-        justify-content: center;
-    }
-
-    #three-container {
-        top: 45%;
-
-        width: 100%;
-
-        height: 55%;
-    }
-
-    .menu-grid,
-    .story,
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .story {
-        gap: 20px;
-    }
-}
-
+  :root{
+    --bg:#121212; --bg2:#1a0f0d; --fg:#f8f5f2; --muted:rgba(248,245,242,.6);
+    --saffron:#f57c00; --gold:#ffc107; --maroon:#702927; --border:rgba(248,245,242,.12);
+    --glass:rgba(248,245,242,.06); --glass-strong:rgba(248,245,242,.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden}
+  ::selection{background:var(--saffron);color:#121212}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .font-heading{font-family:'Playfair Display',serif}
+  .gradient-text{background:linear-gradient(135deg,#f57c00,#ffc107);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border)}
+  .glass-strong{background:var(--glass-strong);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(248,245,242,.18)}
+  .grain{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")}
+
+  /* Navbar */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s;padding:1rem}
+  header.scrolled{padding:.5rem 1rem;background:var(--glass-strong)}
+  nav{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+  .logo-wrap{display:flex;align-items:center;gap:.75rem}
+  .logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(245,124,0,.6);transition:all .3s}
+  header.scrolled .logo-img{width:40px;height:40px}
+  .logo-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem}
+  .stars{display:flex;align-items:center;gap:2px;margin-top:2px}
+  .stars svg{width:12px;height:12px;fill:#ffc107;color:#ffc107}
+  .stars span{font-size:10px;color:rgba(248,245,242,.6);margin-left:4px}
+  .nav-links{display:flex;gap:2rem}
+  .nav-links a{font-size:.875rem;font-weight:500;color:rgba(248,245,242,.8);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--saffron)}
+  .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--saffron);transition:width .3s}
+  .nav-links a:hover::after{width:100%}
+  .nav-actions{display:flex;align-items:center;gap:.5rem}
+  .nav-phone{display:flex;align-items:center;gap:.5rem;font-size:.875rem;color:rgba(248,245,242,.8);transition:color .2s}
+  .nav-phone:hover{color:var(--saffron)}
+  .btn-primary{display:flex;align-items:center;gap:.5rem;border-radius:999px;background:var(--saffron);color:#121212;font-weight:600;font-size:.875rem;padding:.5rem 1rem;transition:all .2s}
+  .btn-primary:hover{background:var(--gold);transform:scale(1.05)}
+
+  /* Hero */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,#1a0f0d,#121212,#121212)}
+  .hero-glow{position:absolute;top:25%;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.3;background:radial-gradient(circle,#f57c00,transparent 70%)}
+  .spices{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .spice{position:absolute;opacity:.4;filter:blur(1px);transition:transform .3s ease-out}
+  .hero-bowl-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;perspective:1200px}
+  .hero-bowl{position:relative;transform-style:preserve-3d;transition:transform .2s ease-out}
+  .hero-bowl-glow{position:absolute;inset:-40px;border-radius:50%;filter:blur(80px);opacity:.5;background:#f57c00}
+  .hero-bowl img{position:relative;width:380px;height:380px;border-radius:50%;object-fit:cover;border:4px solid rgba(245,124,0,.3);box-shadow:0 30px 80px -20px rgba(245,124,0,.5);animation:float 6s ease-in-out infinite}
+  @media(min-width:640px){.hero-bowl img{width:460px;height:460px}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  .hero-ring{position:absolute;inset:-16px;border-radius:50%;border:1px dashed rgba(255,193,7,.3);animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .steam{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:128px;height:160px;animation:steam 4s ease-in-out infinite}
+  @keyframes steam{0%,100%{opacity:.2;transform:translateX(-50%) translateY(0) scale(1)}50%{opacity:.6;transform:translateX(-50%) translateY(-10px) scale(1.1)}}
+  .steam div{width:100%;height:100%;background:linear-gradient(to top,transparent,rgba(255,255,255,.1),transparent);border-radius:50%;filter:blur(20px)}
+  .hero-content{position:relative;z-index:10;text-align:center;padding:8rem 1.25rem 5rem;max-width:64rem;margin:0 auto}
+  .badge-pill{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.375rem 1rem;margin-bottom:1.5rem}
+  .dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse-ring 2s ease-in-out infinite}
+  @keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(255,193,7,.5)}50%{box-shadow:0 0 0 12px rgba(255,193,7,0)}}
+  .badge-pill span{font-size:.875rem;font-weight:500;color:rgba(248,245,242,.8)}
+  h1.hero-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05}
+  .hero-sub{margin-top:1.5rem;font-size:1.125rem;color:rgba(248,245,242,.7);max-width:42rem;margin-left:auto;margin-right:auto}
+  .hero-btns{margin-top:2.25rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+  @media(min-width:640px){.hero-btns{flex-direction:row}}
+  .btn-ghost,.btn-solid{display:flex;align-items:center;gap:.5rem;border-radius:999px;padding:.875rem 1.75rem;font-weight:600;transition:all .2s}
+  .btn-ghost{color:var(--fg)}
+  .btn-ghost:hover{background:var(--saffron);color:#121212}
+  .btn-solid{background:var(--saffron);color:#121212}
+  .btn-solid:hover{background:var(--gold);transform:scale(1.05)}
+  .hero-loc{margin-top:2.5rem;display:flex;align-items:center;justify-content:center;gap:.5rem;color:rgba(248,245,242,.5);font-size:.875rem}
+  .scroll-down{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(248,245,242,.5);animation:bounce 2s ease-in-out infinite}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* Section common */
+  section{position:relative}
+  .section-head{text-align:center;margin-bottom:3rem}
+  .eyebrow{color:var(--saffron);font-size:.875rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase}
+  .section-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.25rem,5vw,3.75rem);margin-top:.75rem}
+
+  /* Menu */
+  .menu{padding:6rem 1.25rem;overflow:hidden}
+  .menu-inner{position:relative;max-width:1280px;margin:0 auto}
+  .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:3rem}
+  .tab{position:relative;padding:.625rem 1.25rem;border-radius:999px;font-size:.875rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--glass);color:rgba(248,245,242,.7);transition:color .2s}
+  .tab.active{background:var(--saffron);color:#121212;border-color:var(--saffron)}
+  .tab:hover{color:var(--fg)}
+  .tab.active:hover{color:#121212}
+  .menu-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
+  @media(min-width:640px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
+  .menu-card{border-radius:1rem;padding:1.25rem;transition:all .3s;overflow:hidden}
+  .menu-card:hover{background:rgba(245,124,0,.08);border-color:rgba(245,124,0,.4)}
+  .menu-img-wrap{position:relative;width:112px;height:112px;margin:0 auto 1rem;perspective:600px}
+  .menu-img-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid rgba(245,124,0,.3);transition:transform .3s}
+  .menu-card:hover .menu-img-wrap img{transform:scale(1.12) rotateY(10deg)}
+  .menu-best{position:absolute;top:-4px;right:-4px;background:var(--gold);color:#121212;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;display:flex;align-items:center;gap:2px}
+  .menu-best svg{width:10px;height:10px;fill:currentColor}
+  .menu-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.75rem}
+  .menu-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.125rem;line-height:1.2}
+  .menu-price{font-weight:700;color:var(--saffron);white-space:nowrap;font-size:1.125rem}
+  .menu-desc{margin-top:.375rem;font-size:.875rem;color:rgba(248,245,242,.55)}
+  .notice{margin:3.5rem auto 0;max-width:48rem;border-radius:1rem;padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;border-color:rgba(255,193,7,.2)}
+  .notice-icon{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(255,193,7,.15);display:flex;align-items:center;justify-content:center;animation:pulse-ring 2s ease-in-out infinite}
+  .notice-icon svg{width:20px;height:20px;color:var(--gold)}
+  .notice h4{font-family:'Playfair Display',serif;font-weight:700;font-size:1.125rem}
+  .notice p{font-size:.875rem;color:rgba(248,245,242,.65);margin-top:.25rem}
+
+  /* Reviews */
+  .reviews{padding:6rem 0;overflow:hidden;background:linear-gradient(to bottom,#121212,#1a0f0d,#121212)}
+  .reviews-head{max-width:1280px;margin:0 auto 3rem;text-align:center;padding:0 1.25rem}
+  .rating-pill{display:inline-flex;align-items:center;gap:.75rem;border-radius:999px;padding:.625rem 1.25rem;margin-top:1.25rem}
+  .rating-pill .big{font-family:'Playfair Display',serif;font-weight:900;font-size:1.5rem;color:var(--gold)}
+  .rating-pill .stars-mini{display:flex;gap:2px}
+  .rating-pill .stars-mini svg{width:16px;height:16px}
+  .rating-pill .stars-mini .on{fill:#ffc107;color:#ffc107}
+  .rating-pill .stars-mini .off{fill:rgba(248,245,242,.2);color:rgba(248,245,242,.2)}
+  .marquee-wrap{position:relative;display:flex;overflow:hidden}
+  .marquee-track{display:flex;animation:marquee 40s linear infinite}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+  .review-card{flex-shrink:0;width:340px;margin:0 .75rem;border-radius:1rem;padding:1.5rem}
+  .review-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+  .review-stars{display:flex;gap:2px}
+  .review-stars svg{width:16px;height:16px;fill:#ffc107;color:#ffc107}
+  .review-text{font-size:.875rem;color:rgba(248,245,242,.8);margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .review-foot{display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid rgba(248,245,242,.1)}
+  .review-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f57c00,#702927);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.875rem}
+  .review-name{font-weight:600;font-size:.875rem}
+  .review-meta{font-size:.75rem;color:rgba(248,245,242,.4)}
+  .fade-edge{position:absolute;top:0;bottom:0;width:96px;pointer-events:none}
+  .fade-left{left:0;background:linear-gradient(to right,#121212,transparent)}
+  .fade-right{right:0;background:linear-gradient(to left,#121212,transparent)}
+  .chefs{max-width:48rem;margin:4rem auto 0;padding:0 1.25rem;text-align:center}
+  .chefs-label{color:rgba(248,245,242,.6);font-size:.875rem;margin-bottom:1rem}
+  .chefs-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+  .chef-pill{display:flex;align-items:center;gap:.5rem;border-radius:999px;padding:.625rem 1.25rem}
+  .chef-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#f57c00,#702927);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+  .chef-name{font-size:.875rem;font-weight:500}
+
+  /* Location */
+  .location{padding:6rem 1.25rem;overflow:hidden}
+  .location-inner{position:relative;max-width:1280px;margin:0 auto}
+  .location-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+  @media(min-width:1024px){.location-grid{grid-template-columns:1fr 1fr}}
+  .map-box{position:relative;border-radius:1.5rem;overflow:hidden;min-height:400px}
+  .map-box iframe{width:100%;height:100%;min-height:400px;border:0;filter:grayscale(1) invert(1);opacity:.9}
+  .status-pill{position:absolute;top:1rem;left:1rem;border-radius:999px;padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem}
+  .status-dot{width:10px;height:10px;border-radius:50%}
+  .status-dot.open{background:#4ade80;animation:pulse-ring 2s ease-in-out infinite}
+  .status-dot.closed{background:#f87171}
+  .status-text{font-size:.75rem;font-weight:600}
+  .info-col{display:flex;flex-direction:column;gap:1.25rem}
+  .info-card{border-radius:1rem;padding:1.5rem}
+  .info-card-row{display:flex;gap:1rem;align-items:flex-start}
+  .info-ic{width:44px;height:44px;border-radius:50%;background:rgba(245,124,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .info-ic svg{width:20px;height:20px;color:var(--saffron)}
+  .info-card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem}
+  .info-card p{color:rgba(248,245,242,.6);font-size:.875rem;margin-top:.25rem}
+  .dir-link{display:inline-flex;align-items:center;gap:.375rem;font-size:.875rem;font-weight:600;color:var(--saffron);margin-top:.75rem}
+  .dir-link:hover{color:var(--gold)}
+  .hours-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+  .hours-head h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem}
+  .hour-row{display:flex;justify-content:space-between;align-items:center;padding:.375rem .75rem;border-radius:.5rem;font-size:.875rem;color:rgba(248,245,242,.6)}
+  .hour-row.today{background:rgba(245,124,0,.15);color:var(--fg)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .contact-card{border-radius:1rem;padding:1.25rem;transition:background .2s}
+  .contact-card:hover{background:rgba(245,124,0,.1)}
+  .contact-card svg{width:20px;height:20px;color:var(--saffron);margin-bottom:.5rem}
+  .contact-card .lbl{font-size:.75rem;color:rgba(248,245,242,.5)}
+  .contact-card .val{font-weight:600;font-size:.875rem}
+  .contact-card:hover .val{color:var(--saffron)}
+  .catering{border-radius:1rem;padding:1.5rem;background:linear-gradient(to right,#f57c00,#702727);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .catering h3{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem}
+  .catering p{color:rgba(248,245,242,.8);font-size:.875rem;margin-top:.25rem}
+  .catering-btn{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--fg);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+  .catering-btn:hover{transform:scale(1.1)}
+  .catering-btn svg{width:20px;height:20px;color:var(--saffron)}
+
+  /* Footer */
+  footer{position:relative;border-top:1px solid rgba(248,245,242,.1);padding:3.5rem 1.25rem;overflow:hidden}
+  .footer-inner{position:relative;max-width:1280px;margin:0 auto}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;margin-bottom:2.5rem}
+  @media(min-width:768px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
+  .footer-brand{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+  .footer-brand img{width:48px;height:48px;border-radius:50%;border:2px solid rgba(245,124,0,.6)}
+  .footer-brand .ln{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem}
+  .footer-desc{color:rgba(248,245,242,.55);font-size:.875rem;max-width:20rem}
+  .footer-social{display:flex;gap:.75rem;margin-top:1.25rem}
+  .footer-social a{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .footer-social a:hover{background:var(--saffron);color:#121212}
+  .footer-social svg{width:16px;height:16px}
+  .footer-col h4{font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1rem}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+  .footer-col a{font-size:.875rem;color:rgba(248,245,242,.55)}
+  .footer-col a:hover{color:var(--saffron)}
+  .footer-col li.contact-li{display:flex;gap:.625rem;align-items:flex-start;font-size:.875rem;color:rgba(248,245,242,.55)}
+  .footer-col li.contact-li svg{width:16px;height:16px;color:var(--saffron);flex-shrink:0;margin-top:2px}
+  .footer-bottom{padding-top:1.5rem;border-top:1px solid rgba(248,245,242,.1);display:flex;flex-direction:column;gap:.75rem;align-items:center;justify-content:space-between;font-size:.75rem;color:rgba(248,245,242,.4)}
+  @media(min-width:640px){.footer-bottom{flex-direction:row}}
+
+  .mobile-only{display:none}
+  @media(max-width:768px){.nav-links,.nav-phone span{display:none}.mobile-only{display:flex}}
 </style>
 </head>
-
 <body>
 
-
-<!-- ==========================================
-     PRODUCED BY REHAN
-========================================== -->
-
-<div class="produced-by">
-    Produced by <span>Rehan</span>
-</div>
-
-
-<!-- ==========================================
-     NAVIGATION
-========================================== -->
-
-<nav>
-
-    <div class="logo">
-        Biryani Fans Hub
-    </div>
-
+<!-- NAVBAR -->
+<header id="header">
+  <nav>
+    <a href__="#top" class="logo-wrap">
+      <img class="logo-img" src="https://media.base44.com/images/public/6aa722afb3174284df440c26/8f784609f_generated_2b954507.jpg" alt="Biryani Fans" />
+      <div>
+        <div class="logo-name">Biryani <span class="gradient-text">Fans</span></div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>
+          <span>4.2 · Google</span>
+        </div>
+      </div>
+    </a>
     <div class="nav-links">
-        <a href="#menu">Menu</a>
-        <a href="#story">Our Story</a>
-        <a href="#contact">Contact</a>
+      <a href__="#menu">Menu</a>
+      <a href__="#reviews">Reviews</a>
+      <a href__="#visit">Visit</a>
     </div>
-
-    <a href="#menu" class="order-btn">
-        Order Now
-    </a>
-
-</nav>
-
-
-<!-- ==========================================
-     HERO
-========================================== -->
-
-<section class="hero">
-
-    <div class="hero-glow"></div>
-
-    <div class="hero-content">
-
-        <div class="label">
-            Premium Dum Biryani • Brampton
-        </div>
-
-        <h1>
-            Biryani<br>
-            <span>Like Royalty.</span>
-        </h1>
-
-        <p>
-            Slow-cooked Dum Biryani with fragrant basmati rice,
-            premium spices and flavours that bring every bite to life.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#menu" class="primary">
-                Explore Menu →
-            </a>
-
-            <a href="#contact" class="secondary">
-                Visit Us
-            </a>
-
-        </div>
-
-        <div class="stats">
-
-            <div class="stat">
-                <strong>100%</strong>
-                <span>Fresh Ingredients</span>
-            </div>
-
-            <div class="stat">
-                <strong>DUM</strong>
-                <span>Slow Cooked</span>
-            </div>
-
-            <div class="stat">
-                <strong>★ 4.9</strong>
-                <span>Fan Favourite</span>
-            </div>
-
-        </div>
-
+    <div class="nav-actions">
+      <a href__="tel:+19053277861" class="nav-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>(905) 327-7861</span>
+      </a>
+      <a href__="https://www.google.com/maps/search/?api=1&query=Biryani+Fans+Dixie+Outlet+Mall+Mississauga" target="_blank" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Order Now</span>
+      </a>
     </div>
+  </nav>
+</header>
 
-
-    <!-- ======================================
-         3D HANDI
-    ======================================= -->
-
-    <div id="three-container"></div>
-
-
-    <!-- FLOATING INGREDIENTS -->
-
-    <div class="floating mint float1"></div>
-
-    <div class="floating onion float2"></div>
-
-    <div class="floating chili float3"></div>
-
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="spices" id="spices"></div>
+  <div class="hero-bowl-wrap">
+    <div class="hero-bowl" id="heroBowl">
+      <div class="hero-bowl-glow"></div>
+      <div class="steam"><div></div></div>
+      <img src="https://media.base44.com/images/public/6aa722afb3174284df440c26/a1b4e1ca3_generated_6fd64e10.jpg" alt="Best Biryani" />
+      <div class="hero-ring"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="badge-pill glass">
+      <span class="dot"></span>
+      <span>Dixie Outlet Mall · Mississauga · 100% Halal</span>
+    </div>
+    <h1 class="hero-title">The Soul of Mississauga,<br><span class="gradient-text">One Grain at a Time.</span></h1>
+    <p class="hero-sub">Authentic handi-cooked biryani, sizzling tikkas, and street-style snacks — crafted fresh daily in the heart of Dixie Outlet Mall's food court.</p>
+    <div class="hero-btns">
+      <a href__="#menu" class="btn-ghost glass-strong">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+        Explore the Menu
+      </a>
+      <a href__="https://www.google.com/maps/search/?api=1&query=Biryani+Fans+Dixie+Outlet+Mall+Mississauga" target="_blank" class="btn-solid">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Order Pickup
+      </a>
+    </div>
+    <div class="hero-loc">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      1250 S Service Rd, Mississauga, ON
+    </div>
+  </div>
+  <a href__="#menu" class="scroll-down">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+  </a>
 </section>
 
-
-<!-- ==========================================
-     MENU
-========================================== -->
-
-<section class="section" id="menu">
-
-    <div class="heading">
-
-        <div class="label">
-            From Our Kitchen
-        </div>
-
-        <h2>
-            Our <span>Masterpieces.</span>
-        </h2>
-
-        <p>
-            Made with patience, premium ingredients and authentic spices.
-        </p>
-
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="menu-inner">
+    <div class="section-head">
+      <span class="eyebrow">The Live-Kitchen Menu</span>
+      <h2 class="section-title">A Feast for <span class="gradient-text">$10–$20</span></h2>
+      <p style="margin-top:1rem;color:rgba(248,245,242,.6);max-width:36rem;margin-left:auto;margin-right:auto">From handi biryani to sizzling street snacks — every plate made fresh to order.</p>
     </div>
-
-
-    <div class="menu-grid">
-
-
-        <div class="card">
-
-            <div class="card-number">
-                01
-            </div>
-
-            <div class="food-icon">
-                <div class="mini-hand"></div>
-            </div>
-
-            <h3>
-                Chicken Dum Biryani
-            </h3>
-
-            <p>
-                Juicy marinated chicken layered with aromatic
-                basmati rice and slow-cooked spices.
-            </p>
-
-            <span class="price">
-                $14.99 CAD
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-number">
-                02
-            </div>
-
-            <div class="food-icon">
-                <div class="mini-hand"></div>
-            </div>
-
-            <h3>
-                Mutton Dum Biryani
-            </h3>
-
-            <p>
-                Tender goat meat slow-cooked with rich spices,
-                herbs and fragrant premium rice.
-            </p>
-
-            <span class="price">
-                $16.99 CAD
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-number">
-                03
-            </div>
-
-            <div class="food-icon">
-                <div class="mini-hand"></div>
-            </div>
-
-            <h3>
-                Vegetable Royal Biryani
-            </h3>
-
-            <p>
-                Fresh vegetables, paneer, saffron and mint
-                layered with aromatic basmati rice.
-            </p>
-
-            <span class="price">
-                $12.99 CAD
-            </span>
-
-        </div>
-
+    <div class="tabs" id="tabs"></div>
+    <div id="menuContent"></div>
+    <div class="notice glass">
+      <div class="notice-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      </div>
+      <div>
+        <h4>Some items may not be available</h4>
+        <p>Our ingredients are sourced fresh daily, so seasonal items may vary in availability. Ask our friendly chefs — <strong style="color:var(--saffron)">Asif, Zahid, or Marian</strong> — for today's specials.</p>
+      </div>
     </div>
-
+  </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-head">
+    <span class="eyebrow">The Wall of Flavor</span>
+    <h2 class="section-title">Loved by <span class="gradient-text">Mississauga</span></h2>
+    <div class="rating-pill glass">
+      <span class="big">4.2</span>
+      <span class="stars-mini" id="ratingStars"></span>
+      <span style="font-size:.875rem;color:rgba(248,245,242,.6)">· 4,266 Google reviews</span>
+    </div>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="reviewTrack"></div>
+    <div class="fade-edge fade-left"></div>
+    <div class="fade-edge fade-right"></div>
+  </div>
+  <div class="chefs">
+    <p class="chefs-label">Meet the hands behind the flavor</p>
+    <div class="chefs-row">
+      <div class="chef-pill glass"><span class="chef-avatar">A</span><span class="chef-name">Chef {Uknown}</span></div>
+      <div class="chef-pill glass"><span class="chef-avatar">Z</span><span class="chef-name">Chef {Uknown}</span></div>
+      <div class="chef-pill glass"><span class="chef-avatar">M</span><span class="chef-name">Chef {Uknown}</span></div>
+    </div>
+  </div>
+</section>
 
-<!-- ==========================================
-     STORY
-========================================== -->
-
-<section class="section" id="story">
-
-    <div class="story">
-
-        <div class="story-visual">
-
-            <div class="big-hand-css"></div>
-
+<!-- LOCATION -->
+<section class="location" id="visit">
+  <div class="location-inner">
+    <div class="section-head">
+      <span class="eyebrow">Mall-to-Table</span>
+      <h2 class="section-title">Come Find <span class="gradient-text">Us</span></h2>
+    </div>
+    <div class="location-grid">
+      <div class="map-box glass">
+        <iframe src="https://www.google.com/maps?q=Dixie+Outlet+Mall+1250+S+Service+Rd+Mississauga&output=embed" loading="lazy"></iframe>
+        <div class="status-pill glass-strong">
+          <span class="status-dot" id="statusDot"></span>
+          <span class="status-text" id="statusText">Checking…</span>
         </div>
-
-
-        <div class="story-text">
-
-            <div class="label">
-                The Biryani Fans Experience
+      </div>
+      <div class="info-col">
+        <div class="info-card glass">
+          <div class="info-card-row">
+            <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div>
+              <h3>Dixie Outlet Mall · Food Court</h3>
+              <p>1250 S Service Rd, Mississauga, ON L5E 2N6</p>
+              <a class="dir-link" href__="https://www.google.com/maps/search/?api=1&query=Biryani+Fans+Dixie+Outlet+Mall+Mississauga" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> Get Directions
+              </a>
             </div>
-
-            <h2>
-                Slow cooked.<br>
-                <span>Made with love.</span>
-            </h2>
-
-            <p>
-                Our biryani is carefully layered, sealed and cooked
-                using the traditional Dum method. Every grain absorbs
-                the flavours, spices and aromas inside the handi.
-            </p>
-
+          </div>
         </div>
-
+        <div class="info-card glass">
+          <div class="hours-head">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f57c00" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h3>Opening Hours</h3>
+          </div>
+          <div id="hoursList"></div>
+        </div>
+        <div class="contact-grid">
+          <a href__="tel:+19053277861" class="contact-card glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="lbl">Call us</div>
+            <div class="val">(905) 327-7861</div>
+          </a>
+          <a href__="mailto:support@biryanifans.ca" class="contact-card glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div class="lbl">Catering</div>
+            <div class="val" style="word-break:break-all">support@biryanifans.ca</div>
+          </a>
+        </div>
+        <div class="catering">
+          <div>
+            <h3>Catering Orders Welcome</h3>
+            <p>Big events, office lunches, celebrations — we've got the handi.</p>
+          </div>
+          <a href__="tel:+19053277861" class="catering-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
 
-
-<!-- ==========================================
-     CONTACT
-========================================== -->
-
-<section class="section" id="contact">
-
-    <div class="heading">
-
-        <div class="label">
-            Come Visit Us
-        </div>
-
-        <h2>
-            Find Your <span>Biryani.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="info-grid">
-
-        <div class="info-card">
-
-            <h3>
-                Opening Hours
-            </h3>
-
-            <p>
-                <strong>Monday – Thursday</strong><br>
-                11:30 AM – 10:00 PM
-            </p>
-
-            <p>
-                <strong>Friday – Saturday</strong><br>
-                11:30 AM – 11:00 PM
-            </p>
-
-            <p>
-                <strong>Sunday</strong><br>
-                12:00 PM – 9:30 PM
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <h3>
-                Contact
-            </h3>
-
-            <p>
-                📍 125 Main St North,
-                Brampton, ON
-            </p>
-
-            <p>
-                ☎ (905) 555-0199
-            </p>
-
-            <p>
-                ✉ info@biryanifanshub.com
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==========================================
-     CTA
-========================================== -->
-
-<section class="cta">
-
-    <h2>
-        Your Biryani<br>
-        Awaits.
-    </h2>
-
-    <p>
-        One pot. Hundreds of flavours.
-    </p>
-
-    <a href="#menu" class="primary">
-        Explore the Menu →
-    </a>
-
-</section>
-
-
+<!-- FOOTER -->
 <footer>
-
-    © 2026 Biryani Fans Hub.
-    All Rights Reserved.
-
-    <br><br>
-
-    <span style="
-        font-family:'Dancing Script',cursive;
-        color:#ffc857;
-        font-size:1.1rem;
-    ">
-        Produced by Rehan Z
-    </span>
-
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://media.base44.com/images/public/6aa722afb3174284df440c26/8f784609f_generated_2b954507.jpg" alt="Biryani Fans" />
+          <span class="ln">Biryani <span class="gradient-text">Fans</span></span>
+        </div>
+        <p class="footer-desc">Authentic handi-cooked biryani, tikkas & street snacks — fresh daily in the Dixie Outlet Mall food court. 100% Halal.</p>
+        <div class="footer-social">
+          <a href__="#" class="glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href__="#" class="glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href__="#menu">Menu</a></li>
+          <li><a href__="#reviews">Reviews</a></li>
+          <li><a href__="#visit">Visit Us</a></li>
+          <li><a href__="tel:+19053277861">Order Pickup</a></li>
+          <li><a href__="mailto:support@biryanifans.ca">Catering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reach Us</h4>
+        <ul>
+          <li class="contact-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dixie Outlet Mall · Food Court<br>1250 S Service Rd, Mississauga, ON L5E 2N6</span></li>
+          <li class="contact-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href__="tel:+19053277861">(905) 327-7861</a></li>
+          <li class="contact-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href__="mailto:support@biryanifans.ca">support@biryanifans.ca</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Biryani Fans. All rights reserved.</p>
+      <p>Some items may not be available · Please ask staff for today's specials.</p>
+    </div>
+  </div>
 </footer>
 
-
 <script>
-
-/* ==========================================
-   THREE.JS CINEMATIC BIRYANI HANDI
-========================================== */
-
-const container =
-    document.getElementById(
-        "three-container"
-    );
-
-
-const scene =
-    new THREE.Scene();
-
-
-const camera =
-    new THREE.PerspectiveCamera(
-        38,
-        container.clientWidth /
-        container.clientHeight,
-        .1,
-        100
-    );
-
-
-camera.position.set(
-    0,
-    1,
-    9
-);
-
-
-const renderer =
-    new THREE.WebGLRenderer({
-        antialias:true,
-        alpha:true
-    });
-
-
-renderer.setPixelRatio(
-    Math.min(
-        window.devicePixelRatio,
-        2
-    )
-);
-
-
-renderer.setSize(
-    container.clientWidth,
-    container.clientHeight
-);
-
-
-renderer.shadowMap.enabled =
-    true;
-
-
-renderer.shadowMap.type =
-    THREE.PCFSoftShadowMap;
-
-
-container.appendChild(
-    renderer.domElement
-);
-
-
-/* ==========================================
-   LIGHTING
-========================================== */
-
-scene.add(
-    new THREE.AmbientLight(
-        0xffd6a0,
-        1.6
-    )
-);
-
-
-const goldLight =
-    new THREE.PointLight(
-        0xffa533,
-        8,
-        25
-    );
-
-goldLight.position.set(
-    4,
-    5,
-    6
-);
-
-scene.add(
-    goldLight
-);
-
-
-const orangeLight =
-    new THREE.PointLight(
-        0xff5414,
-        5,
-        20
-    );
-
-orangeLight.position.set(
-    -5,
-    2,
-    3
-);
-
-scene.add(
-    orangeLight
-);
-
-
-const topLight =
-    new THREE.PointLight(
-        0xffe6bd,
-        5,
-        15
-    );
-
-topLight.position.set(
-    0,
-    7,
-    2
-);
-
-scene.add(
-    topLight
-);
-
-
-/* ==========================================
-   HANDI GROUP
-========================================== */
-
-const handi =
-    new THREE.Group();
-
-scene.add(
-    handi
-);
-
-
-/* ==========================================
-   COPPER POT
-========================================== */
-
-const potGeometry =
-    new THREE.SphereGeometry(
-        2.55,
-        64,
-        40,
-        0,
-        Math.PI * 2,
-        0,
-        Math.PI * .58
-    );
-
-
-const copperMaterial =
-    new THREE.MeshPhysicalMaterial({
-        color:0x8b3e14,
-        metalness:.8,
-        roughness:.2,
-        clearcoat:.9,
-        clearcoatRoughness:.15
-    });
-
-
-const pot =
-    new THREE.Mesh(
-        potGeometry,
-        copperMaterial
-    );
-
-
-pot.scale.set(
-    1,
-    .65,
-    1
-);
-
-
-pot.rotation.x =
-    Math.PI;
-
-
-pot.position.y =
-    -1.2;
-
-
-pot.castShadow =
-    true;
-
-
-pot.receiveShadow =
-    true;
-
-
-handi.add(
-    pot
-);
-
-
-/* ==========================================
-   POT RIM
-========================================== */
-
-const rim =
-    new THREE.Mesh(
-        new THREE.TorusGeometry(
-            2.25,
-            .14,
-            20,
-            80
-        ),
-
-        new THREE.MeshPhysicalMaterial({
-            color:0xd78332,
-            metalness:.9,
-            roughness:.16
-        })
-    );
-
-
-rim.rotation.x =
-    Math.PI / 2;
-
-
-rim.position.y =
-    -.05;
-
-
-handi.add(
-    rim
-);
-
-
-/* ==========================================
-   HANDLES
-========================================== */
-
-function makeHandle(side) {
-
-    const handle =
-        new THREE.Mesh(
-            new THREE.TorusGeometry(
-                .55,
-                .1,
-                16,
-                32,
-                Math.PI
-            ),
-
-            copperMaterial
-        );
-
-
-    handle.rotation.z =
-        side * Math.PI / 2;
-
-
-    handle.position.x =
-        side * 2.45;
-
-
-    handle.position.y =
-        -1;
-
-
-    handi.add(
-        handle
-    );
-}
-
-
-makeHandle(1);
-makeHandle(-1);
-
-
-/* ==========================================
-   RICE
-========================================== */
-
-const riceGroup =
-    new THREE.Group();
-
-handi.add(
-    riceGroup
-);
-
-
-const riceMaterials = [
-
-    new THREE.MeshStandardMaterial({
-        color:0xf6dfa6,
-        roughness:.8
-    }),
-
-    new THREE.MeshStandardMaterial({
-        color:0xe7b64c,
-        roughness:.8
-    }),
-
-    new THREE.MeshStandardMaterial({
-        color:0xffefd0,
-        roughness:.8
-    })
-
+const itemImages={
+  "Chicken Biryani":"https://media.base44.com/images/public/6aa722afb3174284df440c26/a1b4e1ca3_generated_6fd64e10.jpg",
+  "Chicken Tikka":"https://media.base44.com/images/public/6aa722afb3174284df440c26/a0affb6ad_generated_42f626b9.jpg",
+  "Paneer Tikka Wrap":"https://media.base44.com/images/public/6aa722afb3174284df440c26/436414f37_generated_8991507b.jpg",
+  "Butter Chicken":"https://media.base44.com/images/public/6aa722afb3174284df440c26/710da3567_generated_5a787163.jpg",
+  "Samosa Chaat":"https://media.base44.com/images/public/6aa722afb3174284df440c26/c6022b6f2_generated_4aa152be.jpg",
+  "Mango Lassi":"https://media.base44.com/images/public/6aa722afb3174284df440c26/eea2a63e8_generated_e9e1e888.jpg",
+  "Chicken Momo":"https://media.base44.com/images/public/6aa722afb3174284df440c26/5bb599efb_generated_f32559da.jpg",
+  "Egg Omelet Wrap":"https://media.base44.com/images/public/user_6a1f405d51fe37ef9bb4163f/d82a408a0_unnamed.webp"
+};
+
+const menuData=[
+  {id:"signature",title:"Signature",tagline:"House specials & thalis",items:[
+    {name:"Meal for 1 — Vegetarian",desc:"2 Paneer Tikka, 1 Tandoori Naan, 1 Chana Masala, 1 Dal, 1 Rice, 1 Gulab Jamun, Green Salad",price:"$14.99",featured:true},
+    {name:"Meal for 1 — Meat Thali",desc:"2 Chicken Tikka, 1 Seekh Kabab, 2 Curry, 1 Rice, 1 Tandoori Naan, 1 Gulab Jamun, Green Salad",price:"$18.99",featured:true},
+    {name:"Chicken Biryani",desc:"Our signature handi biryani",price:"$13.99"},
+    {name:"Lamb Biryani",desc:"Slow-cooked spiced lamb over basmati",price:"$14.99"},
+    {name:"Veg Biryani",desc:"Garden vegetables & fragrant rice",price:"$11.99"},
+    {name:"Chicken Samosa",desc:"Crispy pastry, spiced chicken",price:"$3.99"},
+    {name:"Veg Samosa",desc:"Per piece",price:"$3.99"},
+    {name:"Chicken Momo",desc:"Steamed dumplings with red chutney",price:"$14.99"},
+    {name:"Veg Momo",desc:"Steamed vegetable dumplings",price:"$13.99"}
+  ]},
+  {id:"breakfast",title:"All Day Breakfast",tagline:"Served all day, every day",items:[
+    {name:"Chicken Tikka Wrap",desc:"Wrap with pop",price:"$12.99"},
+    {name:"Paneer Tikka Wrap",desc:"Wrap with pop",price:"$12.99"},
+    {name:"Egg Omelet Wrap",desc:"Wrap with pop",price:"$12.99"},
+    {name:"Butter Chicken",desc:"With rice or naan",price:"$17.99"},
+    {name:"Chicken Tikka Burger",desc:"Burger with pop",price:"$12.99"},
+    {name:"Aloo Tikki Burger",desc:"With pop",price:"$7.99"},
+    {name:"Arrow Chicken",desc:"With pop",price:"$17.99"},
+    {name:"Sheekh Tawook",desc:"With pop",price:"$17.99"},
+    {name:"Chicken Tikka",desc:"Skewer style with pop",price:"$17.99"}
+  ]},
+  {id:"snacks",title:"Snacks",tagline:"Street-style chaat & bites",items:[
+    {name:"Idli",desc:"Steamed rice cakes",price:"$9.99"},
+    {name:"Dosa",desc:"Crispy lentil-rice crepe",price:"$11.99"},
+    {name:"Samosa Chaat",desc:"Crushed samosa, chutneys & chickpeas",price:"$12.99"},
+    {name:"Vada Pav",desc:"Mumbai's iconic potato slider",price:"$4.99"},
+    {name:"Bhel Puri",desc:"Puffed rice, tangy tamarind",price:"$12.99"},
+    {name:"Papdi Chaat",desc:"Crispy wafers, yogurt & chutneys",price:"$12.99"},
+    {name:"Pani Poori",desc:"Hollow puris with spiced water",price:"$12.99"},
+    {name:"Aloo Tikki Chaat",desc:"Potato patties topped fresh",price:"$12.99"},
+    {name:"Halwa Puri with Channa",desc:"Semolina halwa & chickpea curry",price:"$14.99"}
+  ]},
+  {id:"drinks",title:"Drinks",tagline:"Cool down the heat",items:[
+    {name:"Mango Lassi",desc:"Creamy mango yogurt blend",price:"$6.99"},
+    {name:"Mojito",desc:"Refreshing mint cooler",price:"$6.99"},
+    {name:"Fresh Chai Tea",desc:"Brewed Indian spiced chai",price:"$4.99"},
+    {name:"Badam Milk",desc:"Almond saffron milk",price:"$7.99"},
+    {name:"Rose Milk",desc:"Chilled rose-flavored milk",price:"$5.99"},
+    {name:"Filter Coffee",desc:"South Indian style",price:"$4.99"},
+    {name:"Aloo Tikki",desc:"Side order",price:"$3.99"},
+    {name:"Water",desc:"Bottled",price:"$1.99"},
+    {name:"Pop Can",desc:"Assorted",price:"$1.99"}
+  ]}
 ];
 
-
-for(
-    let i = 0;
-    i < 600;
-    i++
-) {
-
-    const grain =
-        new THREE.Mesh(
-            new THREE.CapsuleGeometry(
-                .028,
-                .13,
-                4,
-                8
-            ),
-
-            riceMaterials[
-                Math.floor(
-                    Math.random() *
-                    riceMaterials.length
-                )
-            ]
-        );
-
-
-    const angle =
-        Math.random() *
-        Math.PI * 2;
-
-
-    const radius =
-        Math.sqrt(
-            Math.random()
-        ) * 2.05;
-
-
-    grain.position.x =
-        Math.cos(angle) *
-        radius;
-
-
-    grain.position.z =
-        Math.sin(angle) *
-        radius;
-
-
-    grain.position.y =
-        .05 +
-        Math.random() * .45 -
-        radius * .08;
-
-
-    grain.rotation.set(
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI
-    );
-
-
-    riceGroup.add(
-        grain
-    );
-
-}
-
-
-/* ==========================================
-   CHICKEN PIECES
-========================================== */
-
-const chickenMaterial =
-    new THREE.MeshStandardMaterial({
-        color:0x9d3d12,
-        roughness:.6
-    });
-
-
-for(
-    let i = 0;
-    i < 14;
-    i++
-) {
-
-    const chicken =
-        new THREE.Mesh(
-            new THREE.DodecahedronGeometry(
-                .23 +
-                Math.random() * .12,
-                1
-            ),
-
-            chickenMaterial
-        );
-
-
-    const angle =
-        Math.random() *
-        Math.PI * 2;
-
-
-    const radius =
-        Math.random() * 1.7;
-
-
-    chicken.position.set(
-        Math.cos(angle) * radius,
-        .25 + Math.random() * .3,
-        Math.sin(angle) * radius
-    );
-
-
-    chicken.rotation.set(
-        Math.random(),
-        Math.random(),
-        Math.random()
-    );
-
-
-    riceGroup.add(
-        chicken
-    );
-
-}
-
-
-/* ==========================================
-   HERBS
-========================================== */
-
-const herbMaterial =
-    new THREE.MeshStandardMaterial({
-        color:0x3d7d27,
-        roughness:.7
-    });
-
-
-for(
-    let i = 0;
-    i < 35;
-    i++
-) {
-
-    const herb =
-        new THREE.Mesh(
-            new THREE.SphereGeometry(
-                .07,
-                8,
-                8
-            ),
-
-            herbMaterial
-        );
-
-
-    const angle =
-        Math.random() *
-        Math.PI * 2;
-
-
-    const radius =
-        Math.random() * 1.9;
-
-
-    herb.position.set(
-        Math.cos(angle) * radius,
-        .35 + Math.random() * .3,
-        Math.sin(angle) * radius
-    );
-
-
-    herb.scale.y =
-        .35;
-
-
-    riceGroup.add(
-        herb
-    );
-
-}
-
-
-/* ==========================================
-   FLOATING LID
-========================================== */
-
-const lidGroup =
-    new THREE.Group();
-
-handi.add(
-    lidGroup
-);
-
-
-const lid =
-    new THREE.Mesh(
-        new THREE.SphereGeometry(
-            2.25,
-            48,
-            24,
-            0,
-            Math.PI * 2,
-            0,
-            Math.PI * .45
-        ),
-
-        copperMaterial
-    );
-
-
-lid.scale.y =
-    .55;
-
-
-lid.rotation.x =
-    Math.PI;
-
-
-lidGroup.add(
-    lid
-);
-
-
-/* LID KNOB */
-
-const knob =
-    new THREE.Mesh(
-        new THREE.SphereGeometry(
-            .3,
-            24,
-            24
-        ),
-
-        new THREE.MeshPhysicalMaterial({
-            color:0xe0923a,
-            metalness:.9,
-            roughness:.15
-        })
-    );
-
-
-knob.position.y =
-    .75;
-
-
-lidGroup.add(
-    knob
-);
-
-
-lidGroup.position.y =
-    3.2;
-
-
-/* ==========================================
-   STEAM
-========================================== */
-
-const steamGroup =
-    new THREE.Group();
-
-handi.add(
-    steamGroup
-);
-
-
-const steamParticles = [];
-
-
-for(
-    let i = 0;
-    i < 50;
-    i++
-) {
-
-    const steam =
-        new THREE.Mesh(
-            new THREE.SphereGeometry(
-                .06 +
-                Math.random() * .09,
-                10,
-                10
-            ),
-
-            new THREE.MeshBasicMaterial({
-                color:0xfff1d4,
-                transparent:true,
-                opacity:.18
-            })
-        );
-
-
-    steam.position.set(
-        (Math.random()-.5)*3,
-        .8 + Math.random()*3,
-        (Math.random()-.5)*1.5
-    );
-
-
-    steam.userData = {
-
-        speed:
-            .005 +
-            Math.random()*.012,
-
-        drift:
-            Math.random() *
-            Math.PI * 2
-
-    };
-
-
-    steamParticles.push(
-        steam
-    );
-
-
-    steamGroup.add(
-        steam
-    );
-
-}
-
-
-/* ==========================================
-   GOLD PARTICLES
-========================================== */
-
-const sparkles =
-    new THREE.Group();
-
-scene.add(
-    sparkles
-);
-
-
-for(
-    let i = 0;
-    i < 200;
-    i++
-) {
-
-    const sparkle =
-        new THREE.Mesh(
-            new THREE.SphereGeometry(
-                .018,
-                6,
-                6
-            ),
-
-            new THREE.MeshBasicMaterial({
-                color:0xffd36b,
-                transparent:true,
-                opacity:.7
-            })
-        );
-
-
-    sparkle.position.set(
-        (Math.random()-.5)*10,
-        (Math.random()-.5)*8,
-        (Math.random()-.5)*5
-    );
-
-
-    sparkles.add(
-        sparkle
-    );
-
-}
-
-
-/* ==========================================
-   MOUSE INTERACTION
-========================================== */
-
-let mouseX = 0;
-let mouseY = 0;
-
-
-window.addEventListener(
-    "mousemove",
-    event => {
-
-        mouseX =
-            event.clientX /
-            window.innerWidth -
-            .5;
-
-
-        mouseY =
-            event.clientY /
-            window.innerHeight -
-            .5;
-
-    }
-);
-
-
-/* ==========================================
-   ANIMATION
-========================================== */
-
-const clock =
-    new THREE.Clock();
-
-
-function animate() {
-
-    requestAnimationFrame(
-        animate
-    );
-
-
-    const time =
-        clock.getElapsedTime();
-
-
-    /* HANDI */
-
-    handi.rotation.y =
-        time * .11;
-
-
-    handi.rotation.x +=
-        (
-            mouseY * .12 -
-            handi.rotation.x
-        ) * .025;
-
-
-    handi.rotation.z +=
-        (
-            mouseX * -.12 -
-            handi.rotation.z
-        ) * .025;
-
-
-    handi.position.y =
-        Math.sin(
-            time * 1.4
-        ) * .12;
-
-
-    /* LID */
-
-    lidGroup.position.y =
-        3.15 +
-        Math.sin(
-            time * 1.7
-        ) * .15;
-
-
-    lidGroup.rotation.y =
-        time * .15;
-
-
-    /* STEAM */
-
-    steamParticles.forEach(
-        (steam, index) => {
-
-            steam.position.y +=
-                steam.userData.speed;
-
-
-            steam.position.x +=
-                Math.sin(
-                    time +
-                    steam.userData.drift
-                ) * .003;
-
-
-            steam.material.opacity =
-                .08 +
-                Math.sin(
-                    time * 2 +
-                    index
-                ) * .05;
-
-
-            if(
-                steam.position.y > 4.5
-            ) {
-
-                steam.position.y =
-                    .8;
-
-            }
-
-        }
-    );
-
-
-    sparkles.rotation.y =
-        time * .03;
-
-
-    renderer.render(
-        scene,
-        camera
-    );
-
-}
-
-
-animate();
-
-
-/* ==========================================
-   RESIZE
-========================================== */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        camera.aspect =
-            container.clientWidth /
-            container.clientHeight;
-
-
-        camera.updateProjectionMatrix();
-
-
-        renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
-        );
-
-    }
-);
-
-
-/* ==========================================
-   3D MENU CARDS
-========================================== */
-
-document
-.querySelectorAll(".card")
-.forEach(card => {
-
-    card.addEventListener(
-        "mousemove",
-        event => {
-
-            const rect =
-                card.getBoundingClientRect();
-
-
-            const x =
-                event.clientX -
-                rect.left;
-
-
-            const y =
-                event.clientY -
-                rect.top;
-
-
-            const rotateX =
-                (
-                    rect.height / 2 -
-                    y
-                ) / 20;
-
-
-            const rotateY =
-                (
-                    x -
-                    rect.width / 2
-                ) / 20;
-
-
-            card.style.transform =
-                `
-                perspective(900px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                translateY(-10px)
-                `;
-
-        }
-    );
-
-
-    card.addEventListener(
-        "mouseleave",
-        () => {
-
-            card.style.transform =
-                `
-                perspective(900px)
-                rotateX(0deg)
-                rotateY(0deg)
-                `;
-
-        }
-    );
-
+const reviews=[
+  {name:"Sukhmanpreet Kaur",meta:"Google Review · 3 months ago",text:"The food was so good and the staff is very friendly. I tried their biryani today. It was delicious."},
+  {name:"Brynne75",meta:"Local Guide · 282 reviews · 8 months ago",text:"One of the best in the food court of the mall. I like their chicken tikka, egg omelet wrap. Also Seekh kebab. Very fresh. The staff and chef — Asif, Zahid and Marian — were very friendly and welcoming."},
+  {name:"Savio Dsouza",meta:"Local Guide · 108 reviews · 3 months ago",text:"One of the tastiest biryani I have had. Located in the food court of Dixie Outlet Mall. The portion served is very generous and the service is prompt. They also provide a complimentary raita."},
+  {name:"Vaish",meta:"Local Guide · 14 reviews · 3 months ago",text:"The biryani was one of the best I've had — perfectly cooked rice, flavorful spices, and tender, well-marinated meat. The aroma alone made the meal memorable. Staff were friendly and attentive."},
+  {name:"Cédric Shutts",meta:"Google Review · 2 months ago",text:"Visited Toronto for the first time and stopped at Biryani Fans in the mall food court. The food was made to order and very delicious, and the young girl at the counter was sweet and hospitable. Easily the best food option around."},
+  {name:"Mohit Kumar Singh",meta:"Local Guide · 47 reviews · 8 months ago",text:"What amazing food I had today — this taste is going to stay with me for very long. It's been 8 years in Canada and never had such tasty food. Even the plain yellow dal and rice were so tasty."},
+  {name:"nyssyl shayne llamado",meta:"Google Review · 5 months ago",text:"Cravings for chicken biryani was satisfied. Love everything. Very delicious."},
+  {name:"Sandhiya Gunaseelan",meta:"Local Guide · 14 reviews · 9 months ago",text:"Had roti and paneer butter masala and I loved it. The owners were very welcoming and the food was served so fresh and fast. I recommend this place if you love Indian food."},
+  {name:"Syed Zohaib Ali",meta:"Google Review · 5 months ago",text:"100% halal spot in Dixie Outlet Mall and the taste is too good. Give it a try!"},
+  {name:"Mehak Guglani",meta:"Google Review · 7 months ago",text:"Great experience. Chai is superb. Chef himself was so nice and polite. Definitely gonna try more of their menu items. Best place to eat in Dixie mall."}
+];
+
+const hours=[
+  {day:"Monday",time:"10:00 AM – 9:00 PM"},
+  {day:"Tuesday",time:"10:00 AM – 9:00 PM"},
+  {day:"Wednesday",time:"10:00 AM – 9:00 PM"},
+  {day:"Thursday",time:"10:00 AM – 9:00 PM"},
+  {day:"Friday",time:"10:00 AM – 9:00 PM"},
+  {day:"Saturday",time:"10:00 AM – 9:00 PM"},
+  {day:"Sunday",time:"10:00 AM – 8:00 PM"}
+];
+
+const starSvg='<svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>';
+
+// Navbar scroll
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>40)});
+
+// Floating spices
+const spicesData=[
+  {emoji:'🌟',top:'12%',left:'8%',depth:40,size:38},
+  {emoji:'🟤',top:'22%',left:'85%',depth:70,size:30},
+  {emoji:'🟡',top:'65%',left:'12%',depth:90,size:24},
+  {emoji:'🔴',top:'78%',left:'80%',depth:55,size:34},
+  {emoji:'🌿',top:'40%',left:'92%',depth:110,size:28},
+  {emoji:'🟠',top:'85%',left:'45%',depth:80,size:22},
+  {emoji:'🟫',top:'15%',left:'55%',depth:130,size:26},
+  {emoji:'✨',top:'55%',left:'70%',depth:60,size:20}
+];
+const spicesEl=document.getElementById('spices');
+const spiceNodes=spicesData.map((s,i)=>{
+  const el=document.createElement('div');
+  el.className='spice';
+  el.style.top=s.top;el.style.left=s.left;el.style.fontSize=s.size+'px';
+  el.textContent=s.emoji;
+  el.dataset.depth=s.depth;
+  spicesEl.appendChild(el);
+  return el;
 });
 
-</script>
+// Mouse parallax
+let mx=0,my=0;
+window.addEventListener('mousemove',e=>{
+  mx=(e.clientX/window.innerWidth-0.5)*2;
+  my=(e.clientY/window.innerHeight-0.5)*2;
+  const bowl=document.getElementById('heroBowl');
+  bowl.style.transform=`rotateY(${mx*12}deg) rotateX(${-my*12}deg)`;
+  spiceNodes.forEach(n=>{const d=parseFloat(n.dataset.depth);n.style.transform=`translate(${mx*d}px,${my*d}px)`});
+});
 
+// Tabs
+const tabsEl=document.getElementById('tabs');
+const menuContent=document.getElementById('menuContent');
+menuData.forEach((s,i)=>{
+  const btn=document.createElement('button');
+  btn.className='tab'+(i===0?' active':'');
+  btn.textContent=s.title;
+  btn.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');renderMenu(s)};
+  tabsEl.appendChild(btn);
+});
+function renderMenu(section){
+  let html='<p style="text-align:center;color:rgba(248,245,242,.5);font-size:.875rem;margin-bottom:2rem">'+section.tagline+'</p><div class="menu-grid">';
+  section.items.forEach(item=>{
+    const img=itemImages[item.name];
+    html+='<div class="menu-card glass">'+
+      (img?'<div class="menu-img-wrap"><img src="'+img+'" alt="'+item.name+'">'+(item.featured?'<span class="menu-best">'+starSvg+' Best</span>':'')+'</div>':'')+
+      '<div class="menu-row"><h4 class="menu-name">'+item.name+'</h4><span class="menu-price">'+item.price+'</span></div>'+
+      '<p class="menu-desc">'+item.desc+'</p></div>';
+  });
+  html+='</div>';
+  menuContent.innerHTML=html;
+}
+renderMenu(menuData[0]);
+
+// Rating stars
+document.getElementById('ratingStars').innerHTML=[0,1,2,3,4].map(i=>'<span class="'+(i<4?'on':'off')+'">'+starSvg+'</span>').join('');
+
+// Reviews marquee
+const track=document.getElementById('reviewTrack');
+function reviewCard(r){
+  return '<div class="review-card glass">'+
+    '<div class="review-top"><div class="review-stars">'+[0,1,2,3,4].map(()=>starSvg).join('')+'</div>'+
+    '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f57c00" stroke-opacity="0.3" stroke-width="2"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3"/><path d="M14 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-4c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3"/></svg></div>'+
+    '<p class="review-text">'+r.text+'</p>'+
+    '<div class="review-foot"><div class="review-avatar">'+r.name[0]+'</div><div><div class="review-name">'+r.name+'</div><div class="review-meta">'+r.meta+'</div></div></div></div>';
+}
+track.innerHTML=[...reviews,...reviews].map(reviewCard).join('');
+
+// Hours + open status
+const today=new Date().getDay();
+const todayIdx=today===0?6:today-1;
+document.getElementById('hoursList').innerHTML=hours.map((h,i)=>'<div class="hour-row'+(i===todayIdx?' today':'')+'"><span>'+h.day+(i===todayIdx?' · <span style="color:var(--saffron)">Today</span>':'')+'</span><span>'+h.time+'</span></div>').join('');
+
+const now=new Date();const h=now.getHours()+now.getMinutes()/60;const close=today===0?20:21;
+const open=h>=10&&h<close;
+document.getElementById('statusDot').className='status-dot '+(open?'open':'closed');
+document.getElementById('statusText').textContent=open?'Open Now · Serving Hot Biryani':'Closed · Opens 10:00 AM';
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
-```
